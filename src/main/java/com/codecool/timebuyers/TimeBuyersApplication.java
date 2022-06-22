@@ -9,5 +9,4 @@ public class TimeBuyersApplication {
     public static void main(String[] args) {
         SpringApplication.run(TimeBuyersApplication.class, args);
     }
-
 }
