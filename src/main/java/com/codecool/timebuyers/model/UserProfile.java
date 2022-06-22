@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.UUID;
 
 public class UserProfile {
-    private UUID id;
+    private final UUID id;
     private String userName;
     private String password;
     private String phoneNumber;
@@ -14,12 +14,14 @@ public class UserProfile {
     private Set<Task> taskToNeed;
     private Set<Task> taskToTake;
 
-    public UserProfile(UUID id, String userName, String password, UserStatus userStatus) {
+    public UserProfile(String userName, String password, UserStatus userStatus) {
         this.id = UUID.randomUUID();
         this.userName = userName;
         this.password = password;
         this.userStatus = userStatus;
     }
+
+
 
     public String getUserName() {
         return userName;
@@ -63,5 +65,10 @@ public class UserProfile {
 
     public void setTaskToTake(Set<Task> taskToTake) {
         this.taskToTake = taskToTake;
+    }
+
+    @Override
+    public String toString() {
+        return "userName: " + userName;
     }
 }
