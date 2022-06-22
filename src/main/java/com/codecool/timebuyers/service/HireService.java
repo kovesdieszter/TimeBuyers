@@ -5,34 +5,37 @@ import com.codecool.timebuyers.model.PaymentMethod;
 import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.payment.Pay;
-import org.apache.catalina.User;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Set;
 
 public class HireService {
-    private UserProfile buyer;
+    private final UserProfile buyer;
     private UserProfile tasker;
-    private Task task;
-    private PaymentMethod paymentMethod;
+    private final Task taskToBuy;
+    private final PaymentMethod paymentMethod;
+    private final PaymentFactory paymentFactory;
 
-    private PaymentFactory paymentFactory;
-    private Pay pay;
-
-
-
-    public HireService(PaymentFactory paymentFactory) {
+    public HireService(PaymentFactory paymentFactory, UserProfile buyer, Task taskToBuy, PaymentMethod paymentMethod) {
         this.paymentFactory = paymentFactory;
-    }
-
-    public void hireUser(UserProfile buyer, User tasker, Task task, PaymentMethod paymentMethod) {
         this.buyer = buyer;
+        this.taskToBuy = taskToBuy;
         this.paymentMethod = paymentMethod;
-        this.task = task;
-        this.pay = paymentFactory.createByPaymentMethod(paymentMethod);
     }
 
-        /** kap egy buyer usert és egy paymentMethodot,
+
+    public void hireUser(UserProfile tasker, Task taskToOffer) {
+        Pay payWithSelectedPayment = paymentFactory.createByPaymentMethod(paymentMethod);
+        payWithSelectedPayment.pay(buyer, tasker, taskToBuy, taskToOffer);
+
+    }
+
+    public void setTasker(UserProfile tasker) {
+        this.tasker = tasker;
+    }
+
+
+
+    /** kap egy buyer usert és egy paymentMethodot,
          * buyer lát egy listát a választható Taskokról
          * kiválaszt egyet azokból
          *
@@ -48,8 +51,5 @@ public class HireService {
          *  && user.getCity == buyer.getCity, && user.getTasksToNeed-ben benne van a buyer által választott task
          * ha a fentiek igazak, az a tasker kerüljön a search resultba
          * **/
-
-
-        //TODO: factory design a fentiekre; ne ifekkel csináljuk!
 
 }
