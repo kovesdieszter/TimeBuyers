@@ -19,8 +19,10 @@ public class PayWithTask implements Pay {
         for (UserProfile user : allUsers){
             if (user.getUserStatus().equals(UserStatus.TASKER) || user.getUserStatus().equals(UserStatus.BOTH)){
                 if (user.getTown().equals(buyer.getTown())){
-                    if (user.getTaskToNeed().contains(taskToOffer)){ //returns with boolean
-                        resultList.add(user);
+                    if (user.getTaskToTake().contains(taskToBuy)){
+                        if (user.getTaskToNeed().contains(taskToOffer)){ //returns with boolean
+                            resultList.add(user);
+                        }
                     }
                 }
             }
