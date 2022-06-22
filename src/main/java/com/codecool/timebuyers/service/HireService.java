@@ -44,27 +44,4 @@ public class HireService {
     public void sendEmail(){
         pay.sendEmail(buyer, tasker, paymentMethod, taskToBuy, taskToOffer);
     }
-
-
-
-    //TODO:     Set<UserProfile> searchResult = null;
-
-
-    /** kap egy buyer usert és egy paymentMethodot,
-         * buyer lát egy listát a választható Taskokról
-         * kiválaszt egyet azokból
-         *
-         * - ha cash:
-         * végigiterálunk a tasker usereken (userStorage.getAllUser -ben az a user.getUserStatus == TASKER || BOTH,  && user.getCity == buyer.getCity, az a user megy egy result listbe
-         * visszaadjuk a result listet
-         * buyer választ egy taskert
-         * és mehet a kétféle email: egy a buyernek, egy a taskernek
-         *
-         * - ha service:
-         * buyer kiválasztja azt a taskot, amit felkínál cserébe (buyer.getTasksToTake),
-         * végigiterálunk a tasker usereken (userStorage.getAllUser -ben az a user.getUserStatus == TASKER || BOTH,
-         *  && user.getCity == buyer.getCity, && user.getTasksToNeed-ben benne van a buyer által választott task
-         * ha a fentiek igazak, az a tasker kerüljön a search resultba
-         * **/
-
 }
