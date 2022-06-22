@@ -1,5 +1,6 @@
 package com.codecool.timebuyers.model;
 
+import java.util.Set;
 import java.util.UUID;
 
 public class UserProfile {
