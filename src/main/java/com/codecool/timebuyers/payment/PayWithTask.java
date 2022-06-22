@@ -28,4 +28,9 @@ public class PayWithTask implements Pay {
 
         return resultList;
     }
+
+    @Override
+    public void sendEmail(UserProfile buyer, UserProfile tasker, PaymentMethod paymentMethod, Task taskToBuy, Task taskToOffer) {
+
+    }
 }

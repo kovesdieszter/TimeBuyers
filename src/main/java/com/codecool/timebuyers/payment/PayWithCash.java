@@ -26,4 +26,9 @@ public class PayWithCash implements Pay {
         }
         return resultList;
     }
+
+    @Override
+    public void sendEmail(UserProfile buyer, UserProfile tasker, PaymentMethod paymentMethod, Task taskToBuy, Task taskToOffer) {
+        System.out.println("This message is from sendEmail method if you pay with cash");
+    }
 }
