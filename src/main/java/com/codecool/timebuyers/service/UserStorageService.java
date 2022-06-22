@@ -1,9 +1,11 @@
 package com.codecool.timebuyers.service;
 
 import com.codecool.timebuyers.model.UserProfile;
+import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
+@Component
 public class UserStorageService {
     private Set<UserProfile> users;
 
@@ -51,6 +53,9 @@ public class UserStorageService {
         }
     }
 
-
-
+    @Override
+    public String toString() {
+        return "In this UserStorageService are the next" +
+                "users=" + users;
+    }
 }
