@@ -36,6 +36,12 @@ public class HireService {
         this.taskToOffer = taskToOffer;
     }
 
+    public void sendEmail(){
+        pay.sendEmail(buyer, tasker, paymentMethod, taskToBuy, taskToOffer);
+    }
+
+
+
     //TODO:     Set<UserProfile> searchResult = null;
 
 
