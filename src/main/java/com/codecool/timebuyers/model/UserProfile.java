@@ -1,5 +1,6 @@
 package com.codecool.timebuyers.model;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -11,8 +12,8 @@ public class UserProfile {
     private String email;
     private String town;
     private UserStatus userStatus;
-    private Set<Task> taskToNeed;
-    private Set<Task> taskToTake;
+    private Set<Task> taskToNeed = new HashSet<>();
+    private Set<Task> taskToTake = new HashSet<>();
 
     public UserProfile(String userName, String password, UserStatus userStatus) {
         this.id = UUID.randomUUID();
