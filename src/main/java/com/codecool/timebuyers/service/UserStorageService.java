@@ -6,11 +6,12 @@ import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.model.UserStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Component
 public class UserStorageService {
-    private Set<UserProfile> users;
+    private final Set<UserProfile> users = new HashSet<>();
 
     public UserProfile getUser(String selectedUserName){
         UserProfile selectedUser = null;
@@ -53,8 +54,7 @@ public class UserStorageService {
 
     @Override
     public String toString() {
-        return "In this UserStorageService are the next" +
-                "users=" + users;
+        return "Registered users: " + users;
     }
 
 }
