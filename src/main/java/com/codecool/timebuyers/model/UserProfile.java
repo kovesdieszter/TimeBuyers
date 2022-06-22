@@ -67,6 +67,14 @@ public class UserProfile {
         this.taskToTake = taskToTake;
     }
 
+    public void addTaskToNeed(Task task){
+        taskToNeed.add(task);
+    }
+
+    public void addTaskToTake(Task task){
+        taskToTake.add(task);
+    }
+
     @Override
     public String toString() {
         return "userName: " + userName;
