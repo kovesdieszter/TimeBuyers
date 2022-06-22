@@ -1,5 +1,7 @@
 package com.codecool.timebuyers.utils;
 
+import org.springframework.stereotype.Component;
+
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
@@ -8,6 +10,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
+@Component
 public class SendEmail {
     private static String userEmail;
 
@@ -15,8 +18,7 @@ public class SendEmail {
         this.userEmail = userEmail;
     }
 
-    public static void sendMail(String emailAddress)
-    {
+    public static void sendMail(String emailAddress) {
         String email = "cctimebuyers@gmail.com"; // sender email
         String password = "CCtimebuyers5"; // sender password
 
