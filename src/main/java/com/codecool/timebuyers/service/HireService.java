@@ -14,18 +14,18 @@ public class HireService {
     private UserProfile tasker;
     private Task taskToOffer;
     private final PaymentMethod paymentMethod;
-    private final PaymentFactory paymentFactory;
+    private final Pay pay;
 
     public HireService(PaymentFactory paymentFactory, UserProfile buyer, Task taskToBuy, PaymentMethod paymentMethod) {
-        this.paymentFactory = paymentFactory;
         this.buyer = buyer;
         this.taskToBuy = taskToBuy;
         this.paymentMethod = paymentMethod;
+        this.pay = paymentFactory.createByPaymentMethod(paymentMethod);
     }
 
-    public Set<UserProfile> getPossibleTaskers(UserProfile tasker) {
-        Pay payWithSelectedPayment = paymentFactory.createByPaymentMethod(paymentMethod);
-        return payWithSelectedPayment.getResultList(buyer, tasker, taskToBuy, taskToOffer, new UserStorageService());
+    public Set<UserProfile> getPossibleTaskers(UserStorageService userStorageService) {
+//        Pay payWithSelectedPayment = paymentFactory.createByPaymentMethod(paymentMethod);
+        return pay.getResultList(buyer, tasker, taskToBuy, taskToOffer, userStorageService);
     }
 
     public void setTasker(UserProfile tasker) {
