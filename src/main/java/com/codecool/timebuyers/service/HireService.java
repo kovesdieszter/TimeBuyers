@@ -10,8 +10,9 @@ import java.util.Set;
 
 public class HireService {
     private final UserProfile buyer;
-    private UserProfile tasker;
     private final Task taskToBuy;
+    private UserProfile tasker;
+    private Task taskToOffer;
     private final PaymentMethod paymentMethod;
     private final PaymentFactory paymentFactory;
 
@@ -22,17 +23,20 @@ public class HireService {
         this.paymentMethod = paymentMethod;
     }
 
-
-    public void hireUser(UserProfile tasker, Task taskToOffer) {
+    public Set<UserProfile> getPossibleTaskers(UserProfile tasker) {
         Pay payWithSelectedPayment = paymentFactory.createByPaymentMethod(paymentMethod);
-        payWithSelectedPayment.pay(buyer, tasker, taskToBuy, taskToOffer);
-
+        return payWithSelectedPayment.getResultList(buyer, tasker, taskToBuy, taskToOffer, new UserStorageService());
     }
 
     public void setTasker(UserProfile tasker) {
         this.tasker = tasker;
     }
 
+    public void setTaskToOffer(Task taskToOffer) {
+        this.taskToOffer = taskToOffer;
+    }
+
+    //TODO:     Set<UserProfile> searchResult = null;
 
 
     /** kap egy buyer usert és egy paymentMethodot,

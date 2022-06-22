@@ -25,6 +25,14 @@ public class UserProfile {
         return userName;
     }
 
+    public UserStatus getUserStatus() {
+        return userStatus;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
     public Set<Task> getTaskToNeed() {
         return taskToNeed;
     }
