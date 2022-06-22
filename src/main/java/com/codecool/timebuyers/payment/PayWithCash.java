@@ -18,7 +18,7 @@ public class PayWithCash implements Pay {
 
         Set<UserProfile> allUsers = userStorageService.getAllUser();
         for (UserProfile user : allUsers){
-            if (user.getUserStatus().equals(UserStatus.BUYER) || user.getUserStatus().equals(UserStatus.BOTH)){
+            if (user.getUserStatus().equals(UserStatus.TASKER) || user.getUserStatus().equals(UserStatus.BOTH)){
                 if (user.getTown().equals(buyer.getTown())){
                     resultList.add(user);
                 }
