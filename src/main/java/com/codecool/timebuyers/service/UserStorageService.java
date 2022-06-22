@@ -1,4 +1,4 @@
 package com.codecool.timebuyers.service;
 
-public class UserStorage {
+public class UserStorageService {
 }
