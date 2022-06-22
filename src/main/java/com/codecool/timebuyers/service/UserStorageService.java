@@ -7,10 +7,6 @@ import java.util.Set;
 public class UserStorageService {
     private Set<UserProfile> users;
 
-    public void addUser(UserProfile newUserProfile) {
-        users.add(newUserProfile);
-    }
-
     public UserProfile getUser(String selectedUserName){
         UserProfile selectedUser = null;
         for (UserProfile user : users) {
@@ -26,6 +22,10 @@ public class UserStorageService {
 
     public Set<UserProfile> getAllUser(){
         return users;
+    }
+
+    public void addUser(UserProfile newUserProfile) {
+        users.add(newUserProfile);
     }
 
     public void deleteUser(UserProfile user){
