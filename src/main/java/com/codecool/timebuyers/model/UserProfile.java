@@ -1,7 +1,8 @@
 package com.codecool.timebuyers.model;
 
-import java.util.*;
+import org.springframework.stereotype.Component;
 
+import java.util.*;
 public class UserProfile {
     private final UUID id;
     private String userName;
