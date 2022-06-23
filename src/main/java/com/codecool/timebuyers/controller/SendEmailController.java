@@ -1,31 +1,38 @@
 package com.codecool.timebuyers.controller;
 
-import com.codecool.timebuyers.model.UserProfile;
-import com.codecool.timebuyers.utils.SendEmail;
+import com.codecool.timebuyers.utils.EmailSender;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/")
 public class SendEmailController {
     private String senderEmailAddress;
 
-    public SendEmailController(String senderEmailAddress) {
-        this.senderEmailAddress = senderEmailAddress;
+    public SendEmailController() throws IOException  {
     }
 
     @Autowired
-    private SendEmail sendEmailObject;
+    private EmailSender sendEmailObject;
 
-    @PostMapping(value = "send-email/{email-address}")
-    public void sendEmailRoute(String emailAddress) {
+    @GetMapping(value="api/getit")
+    public String getit(){
+        return "this";
+    }
+
+    @PostMapping(value = "api/send-email/{emailaddress}")
+    public void sendEmailRoute(@PathVariable String emailaddress) {
+        System.out.println("It's from sendEmailRoute class");
+
         //TODO: this.senderEmailAddress = buyer.getEmail;
 //TODO:         HashMap orderDetails = buyer.adatai, tasker.adatai
 
+        try {
+            sendEmailObject.sendMail(emailaddress);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
