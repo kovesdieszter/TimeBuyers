@@ -23,7 +23,7 @@ public class EmailSender {
 
     public void sendMail(String emailAddress) {
         String email = "cctimebuyers@gmail.com"; // sender email
-        String password = "CCtimebuyers5"; // sender password
+        String password = "qxwahmmipfgufkqv"; // sender password
 
         Properties properties = new Properties();
 
@@ -44,9 +44,9 @@ public class EmailSender {
 
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(email));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(userEmail));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailAddress));
             message.setSubject("Offer from Time Buyers!");
-//            message.setText(emailData);
+            message.setText("MMM");
             message.setContent(
                     emailAddress,
                     "text/html");

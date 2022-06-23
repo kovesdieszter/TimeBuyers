@@ -23,7 +23,7 @@ public class SendEmailController {
     }
 
     @PostMapping(value = "api/send-email/{emailaddress}")
-    public void sendEmailRoute(@PathVariable String emailaddress) {
+    public String sendEmailRoute(@PathVariable String emailaddress) {
         System.out.println("It's from sendEmailRoute class");
 
         //TODO: this.senderEmailAddress = buyer.getEmail;
@@ -34,5 +34,6 @@ public class SendEmailController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return "POST";
     }
 }
