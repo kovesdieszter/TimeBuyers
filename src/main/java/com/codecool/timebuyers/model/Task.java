@@ -1,5 +1,7 @@
 package com.codecool.timebuyers.model;
 
+import org.springframework.stereotype.Component;
+
 public enum Task {
     IKEA_ASSEMBLY(2000),
     MOVE_BOXES_WITHOUT_CAR(2000),

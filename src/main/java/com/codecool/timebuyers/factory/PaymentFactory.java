@@ -4,6 +4,7 @@ import com.codecool.timebuyers.model.PaymentMethod;
 import com.codecool.timebuyers.payment.Pay;
 import com.codecool.timebuyers.payment.PayWithCash;
 import com.codecool.timebuyers.payment.PayWithTask;
+import org.springframework.stereotype.Component;
 
 public class PaymentFactory {
     /** responsible for getting proper pay implementation based on the provided format **/
