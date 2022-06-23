@@ -33,9 +33,9 @@ public class UserController {
         userStorageService.addUser(newUser);
     }
 
-    @DeleteMapping(value = "api/users")
-    public void deleteUser(@RequestBody UserProfile userProfile){
-        userStorageService.deleteUser(userProfile);
+    @DeleteMapping(value = "api/delete/{username}")
+    public void deleteUser(@PathVariable String username){
+        userStorageService.deleteUser(username);
     }
 
     @PutMapping(value = "api/update/{username}")

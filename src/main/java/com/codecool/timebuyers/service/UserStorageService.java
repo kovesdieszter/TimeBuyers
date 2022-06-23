@@ -31,8 +31,13 @@ public class UserStorageService {
     public void addUser(UserProfile newUserProfile) {
         users.add(newUserProfile);
     }
-    public void deleteUser(UserProfile user){
-        users.remove(user);
+    public void deleteUser(String userName){
+        for (UserProfile user : users) {
+            if (user.getUserName().equals(userName)){
+                users.remove(user);
+                break;
+            }
+        }
     }
     public void updateUserByUserName(String selectedUserName,
                                  String updatedPhoneNumber,
