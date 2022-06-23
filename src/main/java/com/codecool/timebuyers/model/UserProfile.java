@@ -1,18 +1,19 @@
 package com.codecool.timebuyers.model;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
 public class UserProfile {
-    private UUID id;
+    private final UUID id;
     private String userName;
     private String password;
     private String phoneNumber;
     private String email;
     private String town;
     private UserStatus userStatus;
-    private Set<Task> taskToNeed;
-    private Set<Task> taskToTake;
+    private Set<Task> taskToNeed = new HashSet<>();
+    private Set<Task> taskToTake = new HashSet<>();
 
     public UserProfile(String userName, String password,
                        String phoneNumber, String email, String town,
@@ -30,6 +31,14 @@ public class UserProfile {
 
     public String getUserName() {
         return userName;
+    }
+
+    public UserStatus getUserStatus() {
+        return userStatus;
+    }
+
+    public String getTown() {
+        return town;
     }
 
     public Set<Task> getTaskToNeed() {
@@ -62,5 +71,18 @@ public class UserProfile {
 
     public void setTaskToTake(Set<Task> taskToTake) {
         this.taskToTake = taskToTake;
+    }
+
+    public void addTaskToNeed(Task task){
+        taskToNeed.add(task);
+    }
+
+    public void addTaskToTake(Task task){
+        taskToTake.add(task);
+    }
+
+    @Override
+    public String toString() {
+        return "userName: " + userName;
     }
 }
