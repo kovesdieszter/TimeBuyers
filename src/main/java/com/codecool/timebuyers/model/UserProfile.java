@@ -1,8 +1,6 @@
 package com.codecool.timebuyers.model;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class UserProfile {
     private final UUID id;
@@ -12,17 +10,22 @@ public class UserProfile {
     private String email;
     private String town;
     private UserStatus userStatus;
-    private Set<Task> taskToNeed = new HashSet<>();
-    private Set<Task> taskToTake = new HashSet<>();
+    private List<Task> taskToNeed = new ArrayList<>();
+    private List<Task> taskToTake = new ArrayList<>();
 
-    public UserProfile(String userName, String password, UserStatus userStatus) {
+    public UserProfile(String userName, String password,
+                       String phoneNumber, String email, String town,
+                       UserStatus userStatus, List<Task> taskToNeed, List<Task> taskToTake) {
         this.id = UUID.randomUUID();
         this.userName = userName;
         this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.town = town;
         this.userStatus = userStatus;
+        this.taskToNeed = taskToNeed;
+        this.taskToTake = taskToTake;
     }
-
-
 
     public String getUserName() {
         return userName;
@@ -36,11 +39,11 @@ public class UserProfile {
         return town;
     }
 
-    public Set<Task> getTaskToNeed() {
+    public List<Task> getTaskToNeed() {
         return taskToNeed;
     }
 
-    public Set<Task> getTaskToTake() {
+    public List<Task> getTaskToTake() {
         return taskToTake;
     }
 
@@ -60,11 +63,11 @@ public class UserProfile {
         this.userStatus = userStatus;
     }
 
-    public void setTaskToNeed(Set<Task> taskToNeed) {
+    public void setTaskToNeed(List<Task> taskToNeed) {
         this.taskToNeed = taskToNeed;
     }
 
-    public void setTaskToTake(Set<Task> taskToTake) {
+    public void setTaskToTake(List<Task> taskToTake) {
         this.taskToTake = taskToTake;
     }
 

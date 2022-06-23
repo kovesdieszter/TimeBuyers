@@ -5,18 +5,17 @@ import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.model.UserStatus;
 import com.codecool.timebuyers.service.UserStorageService;
-import org.apache.catalina.User;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PayWithCash implements Pay {
 
     @Override
-    public Set<UserProfile> getResultList(UserProfile buyer, UserProfile tasker, Task taskToBuy, Task taskToGive, UserStorageService userStorageService) {
-        Set<UserProfile> resultList = new HashSet<>();
+    public List<UserProfile> getResultList(UserProfile buyer, UserProfile tasker, Task taskToBuy, Task taskToGive, UserStorageService userStorageService) {
+        List<UserProfile> resultList = new ArrayList<>();
 
-        Set<UserProfile> allUsers = userStorageService.getAllUser();
+        List<UserProfile> allUsers = userStorageService.getAllUser();
         for (UserProfile user : allUsers){
             if (user.getUserStatus().equals(UserStatus.TASKER) || user.getUserStatus().equals(UserStatus.BOTH)){
                 if (user.getTaskToTake().contains(taskToBuy)){

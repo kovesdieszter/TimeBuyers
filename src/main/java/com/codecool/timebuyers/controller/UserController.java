@@ -8,7 +8,8 @@ import com.codecool.timebuyers.service.UserStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -17,35 +18,35 @@ public class UserController {
     @Autowired
     private UserStorageService userStorageService;
 
-    @GetMapping(value = "users/{username}")
+    @GetMapping(value = "api/users/{username}")
     public UserProfile getUser(@PathVariable String username) {
         return userStorageService.getUser(username);
     }
 
-    @GetMapping(value = "users")
-    public Set<UserProfile> getAllUser() {
+    @GetMapping(value = "api/users")
+    public List<UserProfile> getAllUser() {
         return userStorageService.getAllUser();
     }
 
-    @PostMapping(value = "new-user")
+    @PostMapping(value = "api/new-user")
     public void addUser(@RequestBody UserProfile newUser) {
         userStorageService.addUser(newUser);
     }
 
-    @DeleteMapping(value = "users")
-    public void deleteUser(@RequestBody UserProfile userProfile){
-        userStorageService.deleteUser(userProfile);
+    @DeleteMapping(value = "api/delete/{username}")
+    public void deleteUser(@PathVariable String username){
+        userStorageService.deleteUser(username);
     }
 
-    @PutMapping(value = "update/{username}")
+    @PutMapping(value = "api/update/{username}")
     public void updateUser(@PathVariable String username,
                            @RequestBody String updatedPhoneNumber,
                            @RequestBody String updatedEmail,
                            @RequestBody String updatedTown,
                            @RequestBody UserStatus updatedUserStatus,
-                           @RequestBody Set<Task> updatedTaskToNeed,
-                           @RequestBody Set<Task> updatedTaskToTake){
-        userStorageService.updateUserByName(username,
+                           @RequestBody ArrayList<Task> updatedTaskToNeed,
+                           @RequestBody ArrayList<Task> updatedTaskToTake){
+        userStorageService.updateUserByUserName(username,
                 updatedPhoneNumber,
                 updatedEmail,
                 updatedTown,
