@@ -6,12 +6,13 @@ import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.model.UserStatus;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Component
 public class UserStorageService {
-    private final Set<UserProfile> users = new HashSet<>();
+    private final List<UserProfile> users = new ArrayList<>();
 
     public UserProfile getUser(String selectedUserName){
         UserProfile selectedUser = null;
@@ -24,7 +25,7 @@ public class UserStorageService {
         }
         return selectedUser;
     }
-    public Set<UserProfile> getAllUser(){
+    public List<UserProfile> getAllUser(){
         return users;
     }
     public void addUser(UserProfile newUserProfile) {
@@ -38,8 +39,8 @@ public class UserStorageService {
                                  String updatedEmail,
                                  String updatedTown,
                                  UserStatus updatedUserStatus,
-                                 Set<Task> updatedTaskToNeed,
-                                 Set<Task> updatedTaskToTake){
+                                 List<Task> updatedTaskToNeed,
+                                 List<Task> updatedTaskToTake){
         for (UserProfile user : users) {
             if (user.getUserName().equals(selectedUserName)){
                 user.setPhoneNumber(updatedPhoneNumber);

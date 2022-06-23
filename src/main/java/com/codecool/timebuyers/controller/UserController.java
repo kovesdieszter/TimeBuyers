@@ -8,7 +8,8 @@ import com.codecool.timebuyers.service.UserStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -23,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping(value = "users")
-    public Set<UserProfile> getAllUser() {
+    public List<UserProfile> getAllUser() {
         return userStorageService.getAllUser();
     }
 
@@ -43,8 +44,8 @@ public class UserController {
                            @RequestBody String updatedEmail,
                            @RequestBody String updatedTown,
                            @RequestBody UserStatus updatedUserStatus,
-                           @RequestBody Set<Task> updatedTaskToNeed,
-                           @RequestBody Set<Task> updatedTaskToTake){
+                           @RequestBody ArrayList<Task> updatedTaskToNeed,
+                           @RequestBody ArrayList<Task> updatedTaskToTake){
         userStorageService.updateUserByUserName(username,
                 updatedPhoneNumber,
                 updatedEmail,

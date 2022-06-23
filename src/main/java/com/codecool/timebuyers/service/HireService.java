@@ -6,7 +6,9 @@ import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.payment.Pay;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class HireService {
@@ -16,7 +18,7 @@ public class HireService {
     private Task taskToOffer;
     private final PaymentMethod paymentMethod;
     private final Pay pay;
-    private Set<UserProfile> PossibleTaskers = new HashSet<>();
+    private List<UserProfile> PossibleTaskers = new ArrayList<>();
 
     public HireService(PaymentFactory paymentFactory, UserProfile buyer, Task taskToBuy, PaymentMethod paymentMethod) {
         this.buyer = buyer;
@@ -29,7 +31,7 @@ public class HireService {
         this.PossibleTaskers = pay.getResultList(buyer, tasker, taskToBuy, taskToOffer, userStorageService);
     }
 
-    public Set<UserProfile> getPossibleTaskers() {
+    public List<UserProfile> getPossibleTaskers() {
         return PossibleTaskers;
     }
 
