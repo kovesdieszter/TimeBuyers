@@ -40,19 +40,15 @@ public class UserController {
 
     @PutMapping(value = "api/update/{username}")
     public void updateUser(@PathVariable String username,
-                           @RequestBody String updatedPhoneNumber,
-                           @RequestBody String updatedEmail,
-                           @RequestBody String updatedTown,
-                           @RequestBody UserStatus updatedUserStatus,
-                           @RequestBody ArrayList<Task> updatedTaskToNeed,
-                           @RequestBody ArrayList<Task> updatedTaskToTake){
+                           @RequestBody UserProfile updatedUserProfile){
         userStorageService.updateUserByUserName(username,
-                updatedPhoneNumber,
-                updatedEmail,
-                updatedTown,
-                updatedUserStatus,
-                updatedTaskToNeed,
-                updatedTaskToTake);
+                updatedUserProfile.getPassword(),
+                updatedUserProfile.getPhoneNumber(),
+                updatedUserProfile.getEmail(),
+                updatedUserProfile.getTown(),
+                updatedUserProfile.getUserStatus(),
+                updatedUserProfile.getTaskToNeed(),
+                updatedUserProfile.getTaskToTake());
 
     }
 }

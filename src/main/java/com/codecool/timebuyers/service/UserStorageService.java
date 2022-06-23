@@ -40,6 +40,7 @@ public class UserStorageService {
         }
     }
     public void updateUserByUserName(String selectedUserName,
+                                 String updatedPassword,
                                  String updatedPhoneNumber,
                                  String updatedEmail,
                                  String updatedTown,
@@ -48,6 +49,7 @@ public class UserStorageService {
                                  List<Task> updatedTaskToTake){
         for (UserProfile user : users) {
             if (user.getUserName().equals(selectedUserName)){
+                user.setPassword(updatedPassword);
                 user.setPhoneNumber(updatedPhoneNumber);
                 user.setEmail(updatedEmail);
                 user.setTown(updatedTown);

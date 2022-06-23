@@ -79,8 +79,25 @@ public class UserProfile {
         taskToTake.add(task);
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String toString() {
         return "userName: " + userName;
     }
+
 }
