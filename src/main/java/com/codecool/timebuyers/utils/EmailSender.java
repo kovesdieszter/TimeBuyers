@@ -11,14 +11,17 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 @Component
-public class SendEmail {
+public class EmailSender {
     private static String userEmail;
 
-    public SendEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public EmailSender() {
     }
 
-    public static void sendMail(String emailAddress) {
+    public static void setUserEmail(String userEmail) {
+        EmailSender.userEmail = userEmail;
+    }
+
+    public void sendMail(String emailAddress) {
         String email = "cctimebuyers@gmail.com"; // sender email
         String password = "CCtimebuyers5"; // sender password
 
