@@ -32,7 +32,7 @@ public class UserStorageService {
     public void deleteUser(UserProfile user){
         users.remove(user);
     }
-    public void updateUserByName(String selectedUserName,
+    public void updateUserByUserName(String selectedUserName,
                                  String updatedPhoneNumber,
                                  String updatedEmail,
                                  String updatedTown,

@@ -45,7 +45,7 @@ public class UserController {
                            @RequestBody UserStatus updatedUserStatus,
                            @RequestBody Set<Task> updatedTaskToNeed,
                            @RequestBody Set<Task> updatedTaskToTake){
-        userStorageService.updateUserByName(username,
+        userStorageService.updateUserByUserName(username,
                 updatedPhoneNumber,
                 updatedEmail,
                 updatedTown,

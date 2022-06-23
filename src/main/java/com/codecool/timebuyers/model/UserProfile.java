@@ -14,11 +14,18 @@ public class UserProfile {
     private Set<Task> taskToNeed;
     private Set<Task> taskToTake;
 
-    public UserProfile(UUID id, String userName, String password, UserStatus userStatus) {
+    public UserProfile(String userName, String password,
+                       String phoneNumber, String email, String town,
+                       UserStatus userStatus, Set<Task> taskToNeed, Set<Task> taskToTake) {
         this.id = UUID.randomUUID();
         this.userName = userName;
         this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.town = town;
         this.userStatus = userStatus;
+        this.taskToNeed = taskToNeed;
+        this.taskToTake = taskToTake;
     }
 
     public String getUserName() {
