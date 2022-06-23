@@ -32,7 +32,6 @@ public class HireService {
 //        this.pay = paymentFactory.createByPaymentMethod(paymentMethod);
 //    }
 
-//    PaymentFactory paymentFactory, UserProfile buyer, Task taskToBuy, PaymentMethod paymentMethod
 
     public void setPossibleTaskers(UserStorageService userStorageService) {
         this.PossibleTaskers = pay.getResultList(buyer, tasker, taskToBuy, taskToOffer, userStorageService);
