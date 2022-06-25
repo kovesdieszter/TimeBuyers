@@ -8,9 +8,7 @@ import com.codecool.timebuyers.payment.Pay;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class HireService {
@@ -21,17 +19,23 @@ public class HireService {
     private PaymentMethod paymentMethod;
     private Pay pay;
     private List<UserProfile> PossibleTaskers = new ArrayList<>();
+    private final PaymentFactory paymentFactory = new PaymentFactory();
 
     public HireService() {
     }
 
-//    public addAnOrder(PaymentFactory paymentFactory, UserProfile buyer, Task taskToBuy, PaymentMethod paymentMethod) {
-//        this.buyer = buyer;
-//        this.taskToBuy = taskToBuy;
-//        this.paymentMethod = paymentMethod;
-//        this.pay = paymentFactory.createByPaymentMethod(paymentMethod);
-//    }
+    public void addPaymentMethod(PaymentMethod paymentMethod){ //important to call this, to choose a paymentMethod (it triggers the paymentFactory)
+        PaymentFactory paymentFactory = new PaymentFactory();
+        this.pay = paymentFactory.createByPaymentMethod(paymentMethod);
+        this.paymentMethod = paymentMethod;
+    }
+    public void addBuyer(UserProfile buyer) {
+        this.buyer = buyer;
+    }
 
+    public void addTaskToBuy(Task taskToBuy){
+        this.taskToBuy = taskToBuy;
+    }
 
     public void setPossibleTaskers(UserStorageService userStorageService) {
         this.PossibleTaskers = pay.getResultList(buyer, tasker, taskToBuy, taskToOffer, userStorageService);
