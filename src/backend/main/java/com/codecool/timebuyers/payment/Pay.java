@@ -6,7 +6,6 @@ import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.service.UserStorageService;
 
 import java.util.List;
-import java.util.Set;
 
 public interface Pay {
     List<UserProfile> getResultList(UserProfile buyer, UserProfile tasker, Task taskToBuy, Task taskToGive, UserStorageService userStorageService);

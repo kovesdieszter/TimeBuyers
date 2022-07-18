@@ -1,12 +1,5 @@
 package com.codecool.timebuyers;
 
-import com.codecool.timebuyers.factory.PaymentFactory;
-import com.codecool.timebuyers.model.PaymentMethod;
-import com.codecool.timebuyers.model.Task;
-import com.codecool.timebuyers.model.UserProfile;
-import com.codecool.timebuyers.model.UserStatus;
-import com.codecool.timebuyers.service.HireService;
-import com.codecool.timebuyers.service.UserStorageService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
