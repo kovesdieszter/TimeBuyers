@@ -4,6 +4,7 @@
 
 .navbar-light .navbar-nav .nav-link{
     color: white;
+    text-align: center;
 }
 
 .navbar-nav a:hover {
