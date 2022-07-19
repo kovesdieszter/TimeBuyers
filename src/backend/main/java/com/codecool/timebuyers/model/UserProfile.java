@@ -11,10 +11,11 @@ public class UserProfile {
     private UserStatus userStatus;
     private List<Task> taskToNeed = new ArrayList<>();
     private List<Task> taskToTake = new ArrayList<>();
+    private int rating;
 
     public UserProfile(String userName, String password,
                        String phoneNumber, String email, String town,
-                       UserStatus userStatus, List<Task> taskToNeed, List<Task> taskToTake) {
+                       UserStatus userStatus, List<Task> taskToNeed, List<Task> taskToTake, int rating) {
         this.id = UUID.randomUUID();
         this.userName = userName;
         this.password = password;
@@ -24,6 +25,7 @@ public class UserProfile {
         this.userStatus = userStatus;
         this.taskToNeed = taskToNeed;
         this.taskToTake = taskToTake;
+        this.rating = rating;
     }
 
     public String getUserName() {

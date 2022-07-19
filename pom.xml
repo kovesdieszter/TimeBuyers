@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.codecool</groupId>
-    <artifactId>el-proyecte-grande-sprint-1-java-takacsberni</artifactId>
+    <artifactId>el-proyecte-grande-sprint-2-java-takacsberni</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>el-proyecte-grande-sprint-1-java-takacsberni</name>
-    <description>el-proyecte-grande-sprint-1-java-takacsberni</description>
+    <name>el-proyecte-grande-sprint-2-java-takacsberni</name>
+    <description>el-proyecte-grande-sprint-2-java-takacsberni</description>
     <properties>
         <java.version>11</java.version>
     </properties>
