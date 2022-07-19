@@ -1,6 +1,6 @@
 import React from "react";
 import '../static/CSS/Inside.css';
-import lightBluePic from "../static/images/light_blue_pic.png";
+import assembly from "../static/images/fa-hero-img-desktop.jpg";
 import cleaningPic from "../static/images/cleaning.jpg";
 import laundryPic from "../static/images/laundry.jpg";
 import womanPic from "../static/images/woman.jpg";
@@ -9,7 +9,7 @@ function Inside(){
     return (
         <div className="container">
             <div className="left">
-                {/*<img src={lightBluePic} alt="light blue wallpaper" />*/}
+                <img src={assembly} alt="assembler" />
             </div>
             <div className="right">
                 <img src={cleaningPic} alt="cleaning" />
