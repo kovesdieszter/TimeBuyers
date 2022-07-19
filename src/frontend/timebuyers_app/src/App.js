@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from "./Home";
+import Searchbar from "./Searchbar";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 
 
-//https://stackoverflow.com/questions/70031839/cannot-resolve-symbol-routes!!!!!!!
-
 export default function App() {
     return (
+        <div>
+        <Searchbar />
         <Router>
             <div>
                 <nav>
@@ -24,5 +25,6 @@ export default function App() {
                 </Routes>
             </div>
         </Router>
+        </div>
     );
 }
