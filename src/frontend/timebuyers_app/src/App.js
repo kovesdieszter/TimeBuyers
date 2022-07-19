@@ -3,6 +3,7 @@ import './App.css';
 import Home from "./Home";
 import Searchbar from "./Searchbar";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import Navbar from "./components/Navbar";
 
 
 export default function App() {
@@ -11,16 +12,9 @@ export default function App() {
         <Searchbar />
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                    </ul>
-                </nav>
-
                 {/* 👇️ Wrap your Route components in a Routes component */}
                 <Routes>
+                    <Route path="/" element={<Navbar />} />
                     <Route path="/" element={<Home />} />
                 </Routes>
             </div>
