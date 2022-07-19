@@ -16,9 +16,6 @@ export default function App() {
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
-                            <div>
-                                <img src={lightBluePic} alt="light blue wallpaper" />
-                            </div>
                         </li>
                     </ul>
                 </nav>
@@ -26,7 +23,6 @@ export default function App() {
                 {/* 👇️ Wrap your Route components in a Routes component */}
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/footer" element={<Footer />} />
                 </Routes>
             </div>
         </Router>
