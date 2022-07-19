@@ -2,35 +2,41 @@
     box-sizing: border-box;
 }
 
+:root {
+    --blue-color:#4CB5F5;
+    --green-color:#B3C100;
+    --white-color:#ffffff;
+}
+
 .flex-container-home {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     font-size: 30px;
     text-align: center;
 }
 
 .navbar {
-    background-color: #f1f1f1;
+    background-color: var(--blue-color);
     padding: 10px;
-    flex: 50%;
+    flex: 100%;
 }
 
 .searchbar {
-    background-color: dodgerblue;
+    background-color: var(--green-color);
     padding: 10px;
-    flex: 50%;
+    flex: 10%;
 }
 
 .inside {
-    background-color: dodgerblue;
+    background-color: var(--white-color);
     padding: 10px;
-    flex: 50%;
+    flex: 90%;
 }
 
 .footer {
     background-color: dodgerblue;
     padding: 10px;
-    flex: 50%;
+    flex: 100%;
 }
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */

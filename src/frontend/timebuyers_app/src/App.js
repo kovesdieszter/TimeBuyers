@@ -12,15 +12,7 @@ export default function App() {
     return (
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                    </ul>
-                </nav>
 
-                {/* 👇️ Wrap your Route components in a Routes component */}
                 <Routes>
                     <Route path="/" element={<Home />} />
                 </Routes>

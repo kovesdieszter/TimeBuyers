@@ -1,5 +1,5 @@
 body {
-    background-color: #61dafb;
+    background-color: #ffffff;
     display: grid;
     font-family: system-ui;
     color: white;
@@ -11,7 +11,7 @@ img {
 }
 
 .container{
-    background-color: #282c34;
+    background-color: #4CB5F5;
     justify-content: space-between;
     padding: 10px;
 

@@ -10,13 +10,19 @@
 }
 
 .footer-col-1{
-
+    background-color: #61dafb;
+    padding: 10px;
+    flex: 30%;
 }
 
 .footer-col-2{
-
+    background-color: #61dafb;
+    padding: 10px;
+    flex: 30%;
 }
 
 .footer-col-3{
-
+    background-color: #61dafb;
+    padding: 10px;
+    flex: 30%;
 }

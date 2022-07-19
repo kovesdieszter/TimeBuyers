@@ -7,10 +7,10 @@ import womanPic from "../static/images/woman.jpg";
 
 function Inside(){
     return (
-        <div className="container">
-            <div className="left">
-                <img src={assembly} alt="assembler" />
-            </div>
+        <div className="flex-container-inside">
+            {/*<div className="left">*/}
+            {/*    <img src={assembly} alt="assembler" />*/}
+            {/*</div>*/}
             <div className="right">
                 <img src={cleaningPic} alt="cleaning" />
             </div>
