@@ -21,3 +21,8 @@
     font-size: x-large;
 }
 
+.dropdown-toggle,
+.dropdown-menu {
+    width: 100%;
+}
+
