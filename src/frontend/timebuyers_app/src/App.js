@@ -10,7 +10,6 @@ import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 export default function App() {
     return (
         <div>
-        <Searchbar />
         <Router>
             <div>
                 {/* 👇️ Wrap your Route components in a Routes component */}
@@ -20,6 +19,7 @@ export default function App() {
                 </Routes>
             </div>
         </Router>
+            <Searchbar />
         </div>
     );
 }
