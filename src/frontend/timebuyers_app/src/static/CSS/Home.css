@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.flex-container {
+.flex-container-home {
     display: flex;
     flex-direction: row;
     font-size: 30px;

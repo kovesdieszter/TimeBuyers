@@ -1,15 +1,16 @@
 import React from "react";
-// import '../static/CSS/Home.css';
+import '../static/CSS/Home.css';
 import Inside from "./Inside";
+import Footer from "./Footer";
 
 function Home() {
     return (
         <body>
-        <div className="flex-container">
-            <div className="navbar">Navbar</div>
-            <div className="searchbar">Searchbar</div>
-            <div className="inside">Inside <Inside /> </div>
-            <div className="footer">Footer</div>
+        <div className="flex-container-home">
+            <div className="navbar">Navbar's place</div>
+            <div className="searchbar">Searchbar's place</div>
+            <div className="inside">Inside's place <Inside /> </div>
+            <div className="footer">Footer's place <Footer /></div>
         </div>
         </body>
     )
