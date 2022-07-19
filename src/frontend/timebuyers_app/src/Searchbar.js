@@ -27,6 +27,42 @@ const Searchbar = () => {
                             {
                                 title: 'Move boxes without a car',
                             },
+                            {
+                                title: 'Move boxes with a car',
+                            },
+                            {
+                                title: 'Shopping',
+                            },
+                            {
+                                title: 'Gardening',
+                            },
+                            {
+                                title: 'House cleaning',
+                            },
+                            {
+                                title: 'Wait in line',
+                            },
+                            {
+                                title: 'Cooking',
+                            },
+                            {
+                                title: 'Return items',
+                            },
+                            {
+                                title: 'Baby sitting',
+                            },
+                            {
+                                title: 'Get kids from school',
+                            },
+                            {
+                                title: 'Dog walking',
+                            },
+                            {
+                                title: 'Cat sitting',
+                            },
+                            {
+                                title: 'Dog sitting',
+                            },
                         ],
                     },
                 ]}
