@@ -3,6 +3,7 @@ import './App.css';
 import Home from "./Components/Home";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Footer from "./Components/Footer";
+import lightBluePic from "./static/images/light_blue_pic.png";
 
 
 //https://stackoverflow.com/questions/70031839/cannot-resolve-symbol-routes!!!!!!!
@@ -15,6 +16,9 @@ export default function App() {
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
+                            <div>
+                                <img src={lightBluePic} alt="light blue wallpaper" />
+                            </div>
                         </li>
                     </ul>
                 </nav>
