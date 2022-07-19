@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from "./Home";
+import Home from "./components/Home";
 import Searchbar from "./Searchbar";
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Navbar from "./components/Navbar";
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+
 
 
 export default function App() {
