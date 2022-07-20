@@ -1,5 +1,6 @@
 import '../static/CSS/Navbar.css';
 import React from "react";
+import {Link} from "react-router-dom";
 
 function Navbar(){
     return (
@@ -25,7 +26,7 @@ function Navbar(){
 
                             <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">TimeSellers</a>
 
-                            <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">All</a>
+                            <Link to="/users/all">All</Link>
                         </div>
                     </li>
                     <li className="nav-item">
