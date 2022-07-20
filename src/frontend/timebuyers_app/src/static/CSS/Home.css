@@ -23,7 +23,7 @@
 
 .searchbar {
     background-color: var(--green-color);
-    padding: 10px;
+    padding: 0px;
     flex: 10%;
 }
 
