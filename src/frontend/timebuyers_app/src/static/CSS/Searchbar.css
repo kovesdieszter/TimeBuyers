@@ -2,39 +2,23 @@
     width: max-content;
 }
 
-.side-navigation-panel-select {
-    background-color: #00A1F1;
-    border-radius: 10px;
+.taskTitle {
+    color: white;
 }
 
-.side-navigation-panel-select-inner-option {
-    border-radius: 10px;
-    border-bottom: 10px;
-    border-bottom-color: black;
+.search-menu {
+    background-color: #B3C100;
 }
 
-.side-navigation-panel-select-inner {
-    border-radius: 10px;
-    border-bottom: 10px;
-    border-bottom-color: black;
-    margin-left: 0;
+.dropdown-menu {
+    border: 0px !important;
+}
+.dropdown-item {
+    color: white !important;
+    padding-left: 1px !important;
 }
 
-.side-navigation-panel {
-    float: left;
-    text-align: left;
-    margin: 0;
-}
-.side-navigation-panel-select-inner-option-wrap {
-   margin-left: -50px;
-    width: max-content;
-    text-align: left;
-
-}
-
-.side-navigation-panel-select-inner-option-text {
-    float: left;
-    margin-left: 0;
-    width: max-content;
-    text-align: left;
+.dropdown-item:hover{
+    color: black !important;
+    background-color: white;
 }
