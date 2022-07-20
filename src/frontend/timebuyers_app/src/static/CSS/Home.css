@@ -11,12 +11,10 @@
 .flex-container-home {
     display: flex;
     flex-wrap: wrap;
-    font-size: 30px;
     text-align: center;
 }
 
 .navbar {
-    background-color: var(--blue-color);
     padding: 10px;
     flex: 100%;
 }
