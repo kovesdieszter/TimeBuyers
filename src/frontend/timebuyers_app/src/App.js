@@ -1,30 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from "./Home";
-import Searchbar from "./Searchbar";
+import Home from "./components/Home";
+import Searchbar from "./components/Searchbar";
+import Navbar from "./components/Navbar";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import Footer from "./components/Footer";
+import lightBluePic from "./static/images/light_blue_pic.png";
+
 
 
 export default function App() {
     return (
-        <div>
-        <Searchbar />
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                    </ul>
-                </nav>
 
-                {/* 👇️ Wrap your Route components in a Routes component */}
                 <Routes>
                     <Route path="/" element={<Home />} />
                 </Routes>
             </div>
         </Router>
-        </div>
     );
 }

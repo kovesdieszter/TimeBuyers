@@ -3,7 +3,7 @@
 }
 
 .side-navigation-panel-select {
-    background-color: #61dafb;
+    background-color: #00A1F1;
     border-radius: 10px;
 }
 
@@ -20,7 +20,7 @@
     margin-left: 0;
 }
 
-nav {
+.side-navigation-panel {
     float: left;
     text-align: left;
     margin: 0;
