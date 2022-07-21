@@ -15,7 +15,7 @@ function Inside(){
                 <div className="left">
                     <div className="text-container">
                     <h1 className="text-h1 blue">About TimeBuyers..</h1>
-                    <p> Have you ever felt like you don't have enough time? <br/>
+                    <p className="home-text"> Have you ever felt like you don't have enough time? <br/>
                         After a long and tiring day at work with all the housework to do, have you wished there was more time?<br/>
                         We think we all do, so you are actually at the right place. Why would you spend yours when you can just buy someone else's.<br/><br/>
                         So TimeBuyers aka 'Taskees' are people who hire
@@ -41,7 +41,7 @@ function Inside(){
                 <div className="right">
                     <div className="text-container">
                         <h1 className="text-h1 green">About TimeSellers..</h1>
-                        <p>
+                        <p className="home-text">
                             TimeSellers or we can also call them 'Taskers' are people who are hired for a certain job.<br/>
                         If you are student who has a some free time after school and willing to sit someone's baby or dog you are
                         a great candidate to become a TimeSeller. Don't worry, If you are not a dog or baby person you can still complete
@@ -56,7 +56,7 @@ function Inside(){
             <div className="left">
                 <div className="text-container">
                 <h1 className="text-h1 blue">How to get started?</h1>
-                    <p>
+                    <p className="home-text">
                         In order to become a TimeBuyer or a TimeSeller or even both, the first thing you need to do is register via the "Register" button in the top right corner of the page,
                         then complete your user profile. <br/>At this step, you need to choose the task you are willing to do and the task you need someone for.
                         Without a user profile you cannot hire people and people cannot hire you.<br/><br/>
