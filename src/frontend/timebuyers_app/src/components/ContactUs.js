@@ -4,6 +4,8 @@ import '../static/CSS/ContactUs.css';
 const ENDPOINT = ""; // TODO - ide jöjjön majd a route!
 
 function ContactUs() {
+    // const emailAddress = "takacsberni@gmail.com";
+    const emailAddress = "cctimebuyers@gmail.com";
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -54,7 +56,7 @@ function ContactUs() {
 
     return (
         <div className="container">
-            <form action="api/send-email/takacsberni@gmail.com">
+            <form action="api/send-email/{{emailAddress}}">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name.." onChange={handleName} value={name} type="text"/>
 
