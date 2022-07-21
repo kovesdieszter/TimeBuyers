@@ -15,7 +15,6 @@ function Navbar(){
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <Link to={"about-us"} className="nav-link">About us</Link>
-                        {/*<a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">About us</a>*/}
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="src/frontend/timebuyers_app/src/components/Navbar#" id="navbarDropdown" role="button"
@@ -31,7 +30,7 @@ function Navbar(){
                         </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">Contact us</a>
+                        <Link to="contact-us" className="nav-link">Contact us </Link>
                     </li>
                 </ul>
                 <ul className="navbar-nav mr-right">
@@ -40,7 +39,6 @@ function Navbar(){
                     </li>
                     <li className="nav-item">
                         <Link to={"/users/new-user"} className="nav-link">Registration</Link>
-                        {/*<a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">Registration</a>*/}
                     </li>
                 </ul>
             </div>
