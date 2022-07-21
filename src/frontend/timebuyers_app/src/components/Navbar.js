@@ -38,7 +38,8 @@ function Navbar(){
                         <a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">Login</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">Registration</a>
+                        <Link to={"/users/new-user"}>Registration</Link>
+                        {/*<a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">Registration</a>*/}
                     </li>
                 </ul>
             </div>
