@@ -19,13 +19,55 @@ img {
 }
 
 .left{
-    width: 30px;
     top: 20px;
     right: 70px;
+    text-align: left;
 }
 
-.right{
-    text-align: right;
-    border-bottom: 2px solid #00A1F1;
+.card-inside {
+    display: flex;
+    justify-content: space-between;
     border-top: 2px solid #00A1F1;
+}
+
+.text-container .right {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-inside-left {
+    display: flex;
+    justify-content: left;
+    border-top: 2px solid #00A1F1;
+}
+
+.text-container {
+    padding: 2%;
+    text-align: left;
+}
+
+.text-h1 {
+    padding-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+
+}
+
+.home-text {
+    font-size: medium;
+    font-style: italic;
+}
+
+.bottom {
+    border-bottom: 2px solid #00A1F1;
+}
+
+.blue {
+    color: #00A1F1;
+    border-bottom: 1px solid #B3C100;
+}
+
+.green {
+    color: #B3C100;
+    border-bottom: 1px solid #00A1F1;
 }
