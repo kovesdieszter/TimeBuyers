@@ -26,7 +26,7 @@ function Navbar(){
 
                             <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">TimeSellers</a>
 
-                            <Link to="/users/all">All</Link>
+                            <Link to="/users/all" className="dropdown-item">All</Link>
                         </div>
                     </li>
                     <li className="nav-item">
