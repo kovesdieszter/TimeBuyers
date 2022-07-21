@@ -4,6 +4,7 @@
 
 .taskTitle {
     color: white;
+    font-size: large;
 }
 
 .search-menu {
@@ -13,12 +14,23 @@
 .dropdown-menu {
     border: 0px !important;
 }
-.dropdown-item {
+.dropdown-item .dropdown-item-searchbar{
     color: white !important;
-    padding-left: 1px !important;
+    padding: 2px !important;
+
 }
 
 .dropdown-item:hover{
     color: black !important;
     background-color: white;
 }
+
+a:hover {
+    color: black;
+}
+
+.dropdown-item-searchbar {
+    padding: 2px !important;
+}
+
+

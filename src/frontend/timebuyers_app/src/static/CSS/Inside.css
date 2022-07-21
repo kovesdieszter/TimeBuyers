@@ -6,8 +6,9 @@ body {
 }
 
 img {
-    border-radius: 25px;
     /*border-radius: 90%;*/
+    border-right: 2px solid #00A1F1;
+    border-left: 2px solid #00A1F1;
 }
 
 .container{
@@ -24,8 +25,7 @@ img {
 }
 
 .right{
-    left: 0;
-    bottom: 0;
-    width: 100%;
-
+    text-align: right;
+    border-bottom: 2px solid #00A1F1;
+    border-top: 2px solid #00A1F1;
 }

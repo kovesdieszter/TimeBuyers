@@ -22,7 +22,7 @@
 .searchbar {
     background-color: var(--green-color);
     padding: 0px;
-    flex: 12%;
+    flex: 6%;
 }
 
 .inside {
@@ -32,7 +32,6 @@
 }
 
 .footer {
-    background-color: dodgerblue;
     padding: 10px;
     flex: 100%;
 }
