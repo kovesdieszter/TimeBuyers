@@ -11,15 +11,26 @@ function Inside(){
             {/*<div className="left">*/}
             {/*    <img src={assembly} alt="assembler" />*/}
             {/*</div>*/}
+            <div className="card-inside">
+            <div className="left">
+                <h1>About TimeBuyers</h1>
+                <p>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
+            </div>
             <div className="right">
                 <img src={cleaningPic} alt="cleaning" />
             </div>
-            <div className="left">
-                <img src={laundryPic} alt="laundry" />
             </div>
-            <div className="right">
-                <img src={womanPic} alt="woman" />
-            </div>
+            {/*<div className="left">*/}
+            {/*    <h1>About TimeSellers</h1>*/}
+            {/*    <img src={laundryPic} alt="laundry" />*/}
+            {/*</div>*/}
+            {/*<div className="right">*/}
+            {/*    <h1>How to get started?</h1>*/}
+            {/*    <img src={womanPic} alt="woman" />*/}
+            {/*</div>*/}
 
         </div>
     )

@@ -28,4 +28,9 @@ img {
     text-align: right;
     border-bottom: 2px solid #00A1F1;
     border-top: 2px solid #00A1F1;
+    float: right;
+}
+
+.card-inside {
+    display: inline-flex;
 }
