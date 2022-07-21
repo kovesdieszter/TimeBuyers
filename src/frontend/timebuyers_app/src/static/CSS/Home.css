@@ -22,13 +22,13 @@
 .searchbar {
     background-color: var(--green-color);
     padding: 0px;
-    flex: 10%;
+    flex: 12%;
 }
 
 .inside {
     background-color: var(--white-color);
     padding: 10px;
-    flex: 90%;
+    flex: 88%;
 }
 
 .footer {
