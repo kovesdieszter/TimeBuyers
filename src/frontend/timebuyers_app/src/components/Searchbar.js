@@ -1,74 +1,50 @@
 import React from 'react';
-import {Navigation} from 'react-minimal-side-navigation';
-import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
+import '../static/CSS/Navbar.css';
 import '../static/CSS/Searchbar.css';
 
 const Searchbar = () => {
     return (
-        <div className={"searchbarContainer"}>
-            <Navigation
-                activeItemId="/management/members"
-                onSelect={({itemId}) => {
-                }}
-                items={[
-                    {
-                        title: 'Home',
-                        itemId: '/',
-                        className: 'firstItem'
-                    },
-                    {
-                        title: 'Tasks',
-                        itemId: '/tasks',
-                        subNav: [
-                            {
-                                title: 'Ikea assembly',
-                                // itemId: '/management/projects',
-                            },
-                            {
-                                title: 'Move boxes without a car',
-                            },
-                            {
-                                title: 'Move boxes with a car',
-                            },
-                            {
-                                title: 'Shopping',
-                            },
-                            {
-                                title: 'Gardening',
-                            },
-                            {
-                                title: 'House cleaning',
-                            },
-                            {
-                                title: 'Wait in line',
-                            },
-                            {
-                                title: 'Cooking',
-                            },
-                            {
-                                title: 'Return items',
-                            },
-                            {
-                                title: 'Baby sitting',
-                            },
-                            {
-                                title: 'Get kids from school',
-                            },
-                            {
-                                title: 'Dog walking',
-                            },
-                            {
-                                title: 'Cat sitting',
-                            },
-                            {
-                                title: 'Dog sitting',
-                            },
-                        ],
-                    },
-                ]}
-            />
-        </div>
-    );
+        <nav className="searchbarContainer">
+            <div className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle taskTitle"
+                   href="src/frontend/timebuyers_app/src/components/Navbar#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tasks
+                </a>
+                <div className="dropdown-menu search-menu" aria-labelledby="navbarDropdown">
+                    <a className="dropdown-item"
+                       href="/">Ikea assembly</a>
+                    <a className="dropdown-item"
+                       href="/">Move boxes without a car</a>
+                    <a className="dropdown-item"
+                       href="/">Move boxes with a car</a>
+                    <a className="dropdown-item"
+                       href="/">Shopping</a>
+                    <a className="dropdown-item"
+                       href="/">Gardening</a>
+                    <a className="dropdown-item"
+                       href="/">House cleaning</a>
+                    <a className="dropdown-item"
+                       href="/">Wait in line</a>
+                    <a className="dropdown-item"
+                       href="/">Cooking</a>
+                    <a className="dropdown-item"
+                       href="/">Return items</a>
+                    <a className="dropdown-item"
+                       href="/">Baby sitting</a>
+                    <a className="dropdown-item"
+                       href="/">Get kids from school</a>
+                    <a className="dropdown-item"
+                       href="/">Dog walking</a>
+                    <a className="dropdown-item"
+                       href="/">Cat sitting</a>
+                    <a className="dropdown-item"
+                       href="/">Dog sitting</a>
+
+                </div>
+            </div>
+        </nav>
+    )
 }
 
 export default Searchbar;
