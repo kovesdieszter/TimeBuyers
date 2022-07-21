@@ -14,7 +14,7 @@ function Inside(){
             <div className="card-inside">
                 <div className="left">
                     <div className="text-container">
-                    <h1 className="text-h1 blue">About TimeBuyers..</h1>
+                    <h1 className="text-h1 blue">About TimeBuyers...</h1>
                     <p className="home-text"> Have you ever felt like you don't have enough time? <br/>
                         After a long and tiring day at work with all the housework to do, have you wished there was more time?<br/>
                         We think we all do, so you are actually at the right place. Why would you spend yours when you can just buy someone else's.<br/><br/>
@@ -40,7 +40,7 @@ function Inside(){
                 </div>
                 <div className="right">
                     <div className="text-container">
-                        <h1 className="text-h1 green">About TimeSellers..</h1>
+                        <h1 className="text-h1 green">About TimeSellers...</h1>
                         <p className="home-text">
                             TimeSellers or we can also call them 'Taskers' are people who are hired for a certain job.<br/>
                         If you are student who has a some free time after school and willing to sit someone's baby or dog you are
