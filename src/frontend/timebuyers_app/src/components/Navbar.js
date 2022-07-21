@@ -14,7 +14,8 @@ function Navbar(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">About us</a>
+                        <Link to={"about-us"} className="nav-link">About us</Link>
+                        {/*<a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">About us</a>*/}
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="src/frontend/timebuyers_app/src/components/Navbar#" id="navbarDropdown" role="button"
@@ -26,7 +27,7 @@ function Navbar(){
 
                             <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">TimeSellers</a>
 
-                            <Link to="/users/all">All</Link>
+                            <Link to="/users/all" className="nav-link">All</Link>
                         </div>
                     </li>
                     <li className="nav-item">
@@ -38,7 +39,7 @@ function Navbar(){
                         <a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">Login</a>
                     </li>
                     <li className="nav-item">
-                        <Link to={"/users/new-user"}>Registration</Link>
+                        <Link to={"/users/new-user"} className="nav-link">Registration</Link>
                         {/*<a className="nav-link" href="src/frontend/timebuyers_app/src/components/Navbar#">Registration</a>*/}
                     </li>
                 </ul>
