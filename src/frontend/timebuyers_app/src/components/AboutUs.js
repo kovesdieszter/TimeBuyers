@@ -36,17 +36,17 @@ function AboutUs(){
                 <div className="eszti-pic">
                     <h3> Eszter Kövesdi </h3>
                     <img src={esztiPic} alt="eszti" />
-                    <p> kjsdlfj</p>
+                    {/*<p> kjsdlfj</p>*/}
                 </div>
                 <div className="hanna-pic">
                     <h3> Hanna Szepesi </h3>
                     <img src={hannaPic} alt="hanna" />
-                    <p> kjsdlfj</p>
+                    {/*<p> kjsdlfj</p>*/}
                 </div>
                 <div className="berni-pic">
                     <h3> Bernadett Takács </h3>
                     <img src={berniPic} alt="berni"/>
-                    <p> kjsdlfj</p>
+                    {/*<p> kjsdlfj</p>*/}
                 </div>
             </div>
         </div>
