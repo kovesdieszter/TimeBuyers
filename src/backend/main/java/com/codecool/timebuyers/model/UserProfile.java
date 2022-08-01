@@ -12,6 +12,7 @@ public class UserProfile {
 
 
     @Id
+    @GeneratedValue
     private UUID id;
     private String userName;
     private String password;
