@@ -25,7 +25,7 @@ public class UserStorageService {
         return userStorageRepository.findAll();
     }
     public void addUser(UserProfile newUserProfile) {
-        users.add(newUserProfile);
+        userStorageRepository.save(newUserProfile);
     }
     public void deleteUser(String userName){
         for (UserProfile user : users) {
