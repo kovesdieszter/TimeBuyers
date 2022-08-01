@@ -28,12 +28,7 @@ public class UserStorageService {
         userStorageRepository.save(newUserProfile);
     }
     public void deleteUser(String userName){
-        for (UserProfile user : users) {
-            if (user.getUserName().equals(userName)){
-                users.remove(user);
-                break;
-            }
-        }
+        userStorageRepository.delete(userStorageRepository.findByUserName(userName));
     }
     public void updateUserByUserName(String selectedUserName,
                                  String updatedPassword,
