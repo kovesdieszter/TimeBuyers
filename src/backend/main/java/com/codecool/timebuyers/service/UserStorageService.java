@@ -18,16 +18,8 @@ public class UserStorageService {
     UserStorageRepository userStorageRepository;
     private final List<UserProfile> users = new ArrayList<>();
 
-    public UserProfile getUser(String selectedUserName){
-        UserProfile selectedUser = null;
-        for (UserProfile user : users) {
-            if (user.getUserName().equals(selectedUserName)) {
-                selectedUser = user;
-            } else {
-                System.out.println("User not found with this username.");
-            }
-        }
-        return selectedUser;
+    public UserProfile getUserByEmail(String email){
+        return userStorageRepository.findByEmail(email);
     }
     public List<UserProfile> getAllUser(){
         return userStorageRepository.findAll();

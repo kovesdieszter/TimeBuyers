@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.UUID;
 
 public interface UserStorageRepository extends JpaRepository<UserProfile, UUID> {
+    UserProfile findByEmail(String username);
 }

@@ -15,9 +15,9 @@ public class UserController {
     @Autowired
     private UserStorageService userStorageService;
 
-    @GetMapping(value = "api/users/{username}")
-    public UserProfile getUser(@PathVariable String username) {
-        return userStorageService.getUser(username);
+    @GetMapping(value = "api/users/{email}")
+    public UserProfile getUser(@PathVariable String email) {
+        return userStorageService.getUserByEmail(email);
     }
 
     @GetMapping(value = "api/users")
