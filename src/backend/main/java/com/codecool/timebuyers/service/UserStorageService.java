@@ -1,9 +1,11 @@
 
 package com.codecool.timebuyers.service;
 
+import com.codecool.timebuyers.dao.UserStorageRepository;
 import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.model.UserStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Component
 public class UserStorageService {
+    @Autowired
+    UserStorageRepository userStorageRepository;
     private final List<UserProfile> users = new ArrayList<>();
 
     public UserProfile getUser(String selectedUserName){
@@ -26,7 +30,7 @@ public class UserStorageService {
         return selectedUser;
     }
     public List<UserProfile> getAllUser(){
-        return users;
+        return userStorageRepository.findAll();
     }
     public void addUser(UserProfile newUserProfile) {
         users.add(newUserProfile);
