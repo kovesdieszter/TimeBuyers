@@ -1,6 +1,10 @@
 package com.codecool.timebuyers.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
 
 public enum Task {
     IKEA_ASSEMBLY(2000),
