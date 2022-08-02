@@ -22,9 +22,9 @@ function Navbar(){
                             Buyers and Taskers
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <Link to="/users/buyers/listbuyers">Buyers</Link>
+                            <Link to="/users/buyers" className="dropdown-item">Buyers</Link>
 
-                            <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">Tasker</a>
+                            <Link to="/users/taskers" className="dropdown-item">Taskers</Link>
 
                             <Link to="/users/all" className="dropdown-item">All</Link>
                         </div>

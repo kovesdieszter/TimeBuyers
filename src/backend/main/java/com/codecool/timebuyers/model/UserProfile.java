@@ -19,6 +19,7 @@ public class UserProfile {
     private String phoneNumber;
     private String email;
     private String town;
+    @Enumerated(EnumType.STRING)
     private UserStatus userStatus;
     @ElementCollection(targetClass = Task.class)
     @JoinTable(name = "tasks_to_need", joinColumns = @JoinColumn(name = "user_id"))
