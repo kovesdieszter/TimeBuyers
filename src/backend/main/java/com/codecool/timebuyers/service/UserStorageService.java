@@ -72,4 +72,8 @@ public class UserStorageService {
                 .collect(Collectors.toList());
     }
 
+    public List<UserProfile> getTaskersByTaskToTake(Task task){
+        return userStorageRepository.usersByTask(task);
+    }
+
 }

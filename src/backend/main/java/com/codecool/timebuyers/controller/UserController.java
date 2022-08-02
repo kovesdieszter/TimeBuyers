@@ -1,6 +1,7 @@
 package com.codecool.timebuyers.controller;
 
 
+import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.service.UserStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,10 @@ public class UserController {
                 updatedUserProfile.getTaskToNeed(),
                 updatedUserProfile.getTaskToTake());
 
+    }
+
+    @GetMapping(value = "api/users/by-task-to-take/{task}")
+    public List<UserProfile> usersByTask(@PathVariable Task task){
+        return userStorageService.getTaskersByTaskToTake(task);
     }
 }
