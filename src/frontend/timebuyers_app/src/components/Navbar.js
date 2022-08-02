@@ -19,12 +19,12 @@ function Navbar(){
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="src/frontend/timebuyers_app/src/components/Navbar#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Taskers and Taskees
+                            Buyers and Taskers
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <Link to="/users/buyers/listbuyers">TimeBuyers</Link>
+                            <Link to="/users/buyers/listbuyers">Buyers</Link>
 
-                            <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">TimeSellers</a>
+                            <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">Tasker</a>
 
                             <Link to="/users/all" className="dropdown-item">All</Link>
                         </div>
