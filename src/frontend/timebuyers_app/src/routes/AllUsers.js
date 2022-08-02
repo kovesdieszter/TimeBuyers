@@ -16,7 +16,7 @@ export default function AllUsers() {
         fetchUsers(filter).then((users) => {
             setUsers(users)
         })
-    }, [])
+    }, [filter])  // ez határozza meg, hogy mikor fusson le a function, jelen esetben a filter változásakor renderel újra
 
 
 
