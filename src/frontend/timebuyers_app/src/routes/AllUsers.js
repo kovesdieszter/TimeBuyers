@@ -4,20 +4,22 @@ import '../static/CSS/Inside.css';
 import test_pic from '../static/images/testphoto.jpg'
 import {useParams} from "react-router-dom";
 
-const fetchAllUsers = async (filter) => {
-    const response = await (fetch("/api/users"));
+const fetchUsers = async (filter) => {
+    const response = await (fetch("/api/users/" + filter));
     return await response.json();
 }
 
 export default function AllUsers() {
     const [users, setUsers] = useState([])
     let {filter} = useParams();
-    console.log(filter);
     useEffect(() => {
-        fetchAllUsers().then((users) => {
+        fetchUsers(filter).then((users) => {
             setUsers(users)
         })
     }, [])
+
+
+
     return  (<div className="cardContainer">
         {showUserCards(users)}
     </div>)
@@ -25,9 +27,6 @@ export default function AllUsers() {
 }
 
 const showUserCards = function (data) {
-    console.log(data.map(item => (
-        item
-    )));
     return data.map(item => (
         <UserCard
             name={item.userName}

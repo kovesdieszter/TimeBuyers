@@ -20,9 +20,19 @@ public class UserController {
         return userStorageService.getUserByEmail(email);
     }
 
-    @GetMapping(value = "api/users")
+    @GetMapping(value = "api/users/all")
     public List<UserProfile> getAllUser() {
         return userStorageService.getAllUser();
+    }
+
+    @GetMapping(value = "api/users/taskers")
+    public List<UserProfile> getTaskers() {
+        return userStorageService.getTaskers();
+    }
+
+    @GetMapping(value = "api/users/buyers")
+    public List<UserProfile> getBuyers() {
+        return userStorageService.getBuyers();
     }
 
     @PostMapping(value = "api/new-user")

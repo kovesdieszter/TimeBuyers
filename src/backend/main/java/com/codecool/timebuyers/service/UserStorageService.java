@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 @Component
@@ -54,6 +56,20 @@ public class UserStorageService {
     @Override
     public String toString() {
         return "Registered users: " + users;
+    }
+
+    public List<UserProfile> getBuyers() {
+        List<UserProfile> buyers = userStorageRepository.findAllByUserStatus(UserStatus.BUYER);
+        List<UserProfile> both = userStorageRepository.findAllByUserStatus(UserStatus.BOTH);
+        return Stream.concat(buyers.stream(), both.stream())
+                .collect(Collectors.toList());
+    }
+
+    public List<UserProfile> getTaskers() {
+        List<UserProfile> takers = userStorageRepository.findAllByUserStatus(UserStatus.TASKER);
+        List<UserProfile> both = userStorageRepository.findAllByUserStatus(UserStatus.BOTH);
+        return Stream.concat(takers.stream(), both.stream())
+                .collect(Collectors.toList());
     }
 
 }
