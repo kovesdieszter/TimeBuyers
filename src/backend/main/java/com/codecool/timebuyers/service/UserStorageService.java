@@ -72,7 +72,9 @@ public class UserStorageService {
                 .collect(Collectors.toList());
     }
 
-    public List<UserProfile> getTaskersByTaskToTake(Task task){
+    public List<UserProfile> getTaskersByTaskToTake(String task){
+        List<UserProfile> usersByTaskToTake = userStorageRepository.usersByTask(task);
+        System.out.println(usersByTaskToTake);
         return userStorageRepository.usersByTask(task);
     }
 

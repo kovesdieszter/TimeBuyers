@@ -61,7 +61,7 @@ public class UserController {
     }
 
     @GetMapping(value = "api/users/by-task-to-take/{task}")
-    public List<UserProfile> usersByTask(@PathVariable Task task){
+    public List<UserProfile> usersByTask(@PathVariable String task){
         return userStorageService.getTaskersByTaskToTake(task);
     }
 }
