@@ -22,7 +22,7 @@ function Navbar(){
                             Taskers and Taskees
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">TimeBuyers</a>
+                            <Link to="/users/buyers/listbuyers">TimeBuyers</Link>
 
                             <a className="dropdown-item" href="src/frontend/timebuyers_app/src/components/Navbar#">TimeSellers</a>
 

@@ -2,14 +2,17 @@ import React, {useEffect, useState} from "react";
 import '../static/CSS/Usercard.css';
 import '../static/CSS/Inside.css';
 import test_pic from '../static/images/testphoto.jpg'
+import {useParams} from "react-router-dom";
 
-const fetchAllUsers = async () => {
+const fetchAllUsers = async (filter) => {
     const response = await (fetch("/api/users"));
     return await response.json();
 }
 
 export default function AllUsers() {
     const [users, setUsers] = useState([])
+    let {filter} = useParams();
+    console.log(filter);
     useEffect(() => {
         fetchAllUsers().then((users) => {
             setUsers(users)
