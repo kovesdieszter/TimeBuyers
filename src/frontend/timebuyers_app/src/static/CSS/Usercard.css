@@ -40,3 +40,16 @@ button:hover, a:hover {
 img {
     border-radius: 0;
 }
+
+.payButton {
+    width: max-content;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: larger;
+    background-color: #61dafb;
+}
+
+.payButton:hover {
+    text-decoration: none;
+}
