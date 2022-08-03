@@ -79,7 +79,7 @@ export default function RegisterForm() {
                {successMessage()}
            </div>
 
-            <form  action="/api/new-user" method="post">
+            <form action="/api/new-user" method="post" th:object="${user} enctype="multipart/form-data"">
                 <label className="label">Username</label>
                 <input onChange={handleName} className="input"
                        value={username} type="text" />
@@ -91,6 +91,11 @@ export default function RegisterForm() {
                 <label className="label">Password</label>
                 <input onChange={handlePassword} className="input"
                        value={password} type="password" />
+
+                <div>
+                    <label>Photos: </label>
+                    <input type="file" name="image" accept="image/png, image/jpeg" />
+                </div>
 
                 <button onClick={handleSubmit} className="btn" type="submit">a
                     Submit
