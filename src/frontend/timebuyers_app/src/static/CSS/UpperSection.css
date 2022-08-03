@@ -6,6 +6,7 @@
     ) center center;
     background-size: cover;
     position: relative;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .flex-container-inside {
@@ -23,6 +24,7 @@
     left: 0;
     right: 0;
     border-top: 2px solid #B3C100;
+    border-bottom: 2px solid #B3C100;
 }
 
 #hero h1 {
@@ -44,3 +46,47 @@
 #hero h2 {
     color: white;
 }
+
+    /* Slideshow */
+
+.slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 90em;
+}
+
+.slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+}
+
+.slide {
+    display: inline-block;
+    height: 400px;
+    width: 100%;
+    border-radius: 40px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+    text-align: center;
+    position: relative;
+}
+
+.slideshowDot {
+    display: inline-block;
+    height: 1.5vh;
+    width: 1.5vh;
+    border-radius: 50%;
+
+    cursor: pointer;
+    margin: 10px 7px 0px;
+
+    background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+    background-color: #B3C100;
+}
+

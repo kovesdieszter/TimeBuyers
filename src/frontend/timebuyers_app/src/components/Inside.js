@@ -9,7 +9,7 @@ import UpperSection from "./UpperSection";
 function Inside(){
     return (
         <div>
-        <div><UpperSection /></div>
+        <UpperSection />
         <div className="flex-container-inside">
 
             {/*<div className="left">*/}
