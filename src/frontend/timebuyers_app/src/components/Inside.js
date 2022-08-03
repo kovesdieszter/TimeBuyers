@@ -2,12 +2,16 @@ import React from "react";
 import '../static/CSS/Inside.css';
 import assembly from "../static/images/fa-hero-img-desktop.jpg";
 import cleaningPic from "../static/images/cleaning.jpg";
-import laundryPic from "../static/images/laundry.jpg";
-import womanPic from "../static/images/woman.jpg";
+import laundryPic from "../static/images/laundry.png";
+import womanPic from "../static/images/woman.png";
+import UpperSection from "./UpperSection";
 
 function Inside(){
     return (
+        <div>
+        <div><UpperSection /></div>
         <div className="flex-container-inside">
+
             {/*<div className="left">*/}
             {/*    <img src={assembly} alt="assembler" />*/}
             {/*</div>*/}
@@ -69,6 +73,7 @@ function Inside(){
             </div>
             </div>
 
+        </div>
         </div>
     )
 }
