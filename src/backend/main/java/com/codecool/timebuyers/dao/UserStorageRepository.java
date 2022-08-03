@@ -1,5 +1,6 @@
 package com.codecool.timebuyers.dao;
 
+import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.model.UserStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,4 +12,6 @@ public interface UserStorageRepository extends JpaRepository<UserProfile, UUID> 
     UserProfile findByEmail(String email);
     UserProfile findByUserName(String username);
     List<UserProfile> findAllByUserStatus(UserStatus userStatus);
+
+    List<UserProfile> findAllByTaskToTakeAndUserStatus(Task task, UserStatus userStatus);
 }
