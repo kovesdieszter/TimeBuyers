@@ -16,6 +16,7 @@ root.render(
         <Routes>
             <Route path="/" element={<App />}>
                 <Route path="tasks/:filter" element={<AllUsers />} />
+                <Route path="tasks/:filter/:statusFilter" element={<AllUsers />} />
                 <Route path="users/:filter" element={<AllUsers />} />
                 <Route path="users/new-user" element={<RegisterForm />} />
                 <Route path="about-us" element={<AboutUs />} />
