@@ -17,10 +17,10 @@ public class UserController {
     @Autowired
     private UserStorageService userStorageService;
 
-    @GetMapping(value = "api/users/{email}")
-    public UserProfile getUser(@PathVariable String email) {
-        return userStorageService.getUserByEmail(email);
-    }
+//    @GetMapping(value = "api/users/{email}")
+//    public UserProfile getUser(@PathVariable String email) {
+//        return userStorageService.getUserByEmail(email);
+//    }
 
     @GetMapping(value = "api/users/all")
     public List<UserProfile> getAllUser() {
@@ -59,6 +59,11 @@ public class UserController {
                 updatedUserProfile.getTaskToNeed(),
                 updatedUserProfile.getTaskToTake());
 
+    }
+
+    @GetMapping(value = "api/users/{task}")
+    public List<UserProfile> usersByTask(@PathVariable String task){
+        return userStorageService.getTaskersByTaskToTake(task);
     }
 
     @GetMapping(value = "api/users/{task}/{status}")

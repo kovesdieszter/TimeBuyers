@@ -12,6 +12,8 @@ const fetchUsers = async (filter) => {
 export default function AllUsers() {
     const [users, setUsers] = useState([])
     let {filter} = useParams();
+    console.log(filter)
+
     useEffect(() => {
         fetchUsers(filter).then((users) => {
             setUsers(users)

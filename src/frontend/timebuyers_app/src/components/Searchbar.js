@@ -1,6 +1,7 @@
 import React from 'react';
 import '../static/CSS/Navbar.css';
 import '../static/CSS/Searchbar.css';
+import {Link} from "react-router-dom";
 
 const Searchbar = () => {
     return (
@@ -12,34 +13,32 @@ const Searchbar = () => {
                     Tasks
                 </a>
                 <div className="dropdown-menu search-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Ikea assembly</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Move boxes</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Move boxes + car</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Shopping</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Gardening</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">House cleaning</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Wait in line</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Cooking</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Return items</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Baby sitting</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Get kids from school</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Dog walking</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Cat sitting</a>
-                    <a className="dropdown-item-searchbar dropdown-item"
-                       href="/">Dog sitting</a>
+                    <Link to="/tasks/IKEA_ASSEMBLY" className="dropdown-item">Ikea assembly</Link>
+                    <Link to="/tasks/MOVE_BOXES" className="dropdown-item">Move boxes</Link>
+                    <Link to="/tasks/SHOPPING" className="dropdown-item">Shopping</Link>
+                    <Link to="/tasks/DOG_WALKING" className="dropdown-item">Dog walking</Link>
+
+
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Gardening</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">House cleaning</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Wait in line</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Cooking</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Return items</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Baby sitting</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Get kids from school</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Dog walking</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Cat sitting</a>*/}
+                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
+                    {/*   href="/">Dog sitting</a>*/}
 
                 </div>
             </div>
