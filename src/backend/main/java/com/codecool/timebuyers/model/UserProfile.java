@@ -32,6 +32,7 @@ public class UserProfile {
     @Enumerated(EnumType.STRING)
     private List<Task> taskToTake;
     private int rating;
+    private String photo;
 
 
     @Override
