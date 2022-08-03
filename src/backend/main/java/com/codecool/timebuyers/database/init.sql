@@ -131,3 +131,17 @@ VALUES ('e7636f4e-1255-11ed-861d-0242ac120009',
 INSERT INTO tasks_to_take
 VALUES('e7636f4e-1255-11ed-861d-0242ac120009',
        'BABY_SITTING');
+
+INSERT INTO user_profile
+VALUES ('e7636f4e-1255-11ed-861d-0242ac120010',
+        'john@gmail.com',
+        'johnpass',
+        307423344,
+        3,
+        'Budapest',
+        'John',
+        'BOTH');
+
+INSERT INTO tasks_to_take
+VALUES('e7636f4e-1255-11ed-861d-0242ac120009',
+       'BABY_SITTING');
