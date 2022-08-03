@@ -67,7 +67,7 @@ public class UserController {
     }
 
     @GetMapping(value = "api/users/{task}/{status}")
-    public List<UserProfile> getUsersByPayment(@PathVariable Task task, @PathVariable UserStatus status){
+    public List<UserProfile> getUsersByPayment(@PathVariable String task, @PathVariable String status){
         return userStorageService.getUsersByPaymentMethod(task, status);
     }
 }
