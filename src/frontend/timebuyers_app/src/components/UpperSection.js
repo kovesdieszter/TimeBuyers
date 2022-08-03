@@ -15,8 +15,8 @@ function UpperSection() {
 
 
     const third =  <section id="hero3" className="d-flex flex-column justify-content-center align-items-center">
-        <div className="upper-section-text-container" data-aos="fade-up"><h1>Or we can help you save some <span>time</span> for the family</h1>
-            <h2>Hi Buyer! Let our Taskers do your stuff, while you spend some some time with the family.</h2></div>
+        <div className="upper-section-text-container" data-aos="fade-up"><h1>Or we can help you save some <span>time</span></h1>
+            <h2>Hi Buyer! Let our Taskers do your stuff, while you spend some some family-time.</h2></div>
     </section>
 
     const colors = [first, second, third]
