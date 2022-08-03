@@ -79,7 +79,7 @@ export default function RegisterForm() {
                {successMessage()}
            </div>
 
-            <form action="/api/new-user" method="post" th:object="${user} enctype="multipart/form-data"">
+           <form action="/api/new-user" method="post" encType="multipart/form-data">
                 <label className="label">Username</label>
                 <input onChange={handleName} className="input"
                        value={username} type="text" />
