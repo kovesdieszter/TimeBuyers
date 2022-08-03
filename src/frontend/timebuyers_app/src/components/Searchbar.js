@@ -13,33 +13,19 @@ const Searchbar = () => {
                     Tasks
                 </a>
                 <div className="dropdown-menu search-menu" aria-labelledby="navbarDropdown">
-                    <Link to="/tasks/IKEA_ASSEMBLY" className="dropdown-item">Ikea assembly</Link>
-                    <Link to="/tasks/MOVE_BOXES" className="dropdown-item">Move boxes</Link>
-                    <Link to="/tasks/SHOPPING" className="dropdown-item">Shopping</Link>
-                    <Link to="/tasks/DOG_WALKING" className="dropdown-item">Dog walking</Link>
-
-
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Gardening</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">House cleaning</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Wait in line</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Cooking</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Return items</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Baby sitting</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Get kids from school</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Dog walking</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Cat sitting</a>*/}
-                    {/*<a className="dropdown-item-searchbar dropdown-item"*/}
-                    {/*   href="/">Dog sitting</a>*/}
-
+                    <Link to="/tasks/IKEA_ASSEMBLY" className="dropdown-item-searchbar dropdown-item">Ikea assembly</Link>
+                    <Link to="/tasks/MOVE_BOXES" className="dropdown-item dropdown-item-searchbar">Move boxes</Link>
+                    <Link to="/tasks/SHOPPING" className="dropdown-item dropdown-item-searchbar">Shopping</Link>
+                    <Link to="/tasks/DOG_WALKING" className="dropdown-item dropdown-item-searchbar">Dog walking</Link>
+                    <Link to="/tasks/GARDENING" className="dropdown-item dropdown-item-searchbar">Gardening</Link>
+                    <Link to="/tasks/HOUSE_CLEANING" className="dropdown-item dropdown-item-searchbar">House cleaning</Link>
+                    <Link to="/tasks/WAIT_IN_LINE" className="dropdown-item dropdown-item-searchbar">Wait in line</Link>
+                    <Link to="/tasks/COOKING" className="dropdown-item dropdown-item-searchbar">Cooking</Link>
+                    <Link to="/tasks/RETURN_ITEMS" className="dropdown-item dropdown-item-searchbar">Return items</Link>
+                    <Link to="/tasks/BABY_SITTING" className="dropdown-item dropdown-item-searchbar">Baby sitting</Link>
+                    <Link to="/tasks/GET_KIDS_FROM_SCHOOL" className="dropdown-item dropdown-item-searchbar">Get kids from school</Link>
+                    <Link to="/tasks/CAT_SITTING" className="dropdown-item dropdown-item-searchbar">Cat sitting</Link>
+                    <Link to="/tasks/DOG_SITTING" className="dropdown-item dropdown-item-searchbar">Dog sitting</Link>
                 </div>
             </div>
         </nav>
