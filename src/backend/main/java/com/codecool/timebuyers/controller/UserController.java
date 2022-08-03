@@ -1,13 +1,18 @@
 package com.codecool.timebuyers.controller;
 
 
+import com.codecool.timebuyers.dao.UserStorageRepository;
 import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.model.UserStatus;
 import com.codecool.timebuyers.service.UserStorageService;
+import com.codecool.timebuyers.utils.FileUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -16,6 +21,7 @@ public class UserController {
 
     @Autowired
     private UserStorageService userStorageService;
+    private UserStorageRepository userStorageRepository;
 
     @GetMapping(value = "api/users/get/{email}")
     public UserProfile getUser(@PathVariable String email) {
@@ -37,8 +43,22 @@ public class UserController {
         return userStorageService.getBuyers();
     }
 
+//    @PostMapping(value = "api/new-user")
+//    public void addUser(@RequestBody UserProfile newUser) {
+//        userStorageService.addUser(newUser);
+//    }
+
     @PostMapping(value = "api/new-user")
-    public void addUser(@RequestBody UserProfile newUser) {
+    public void addUser(@RequestBody UserProfile newUser, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        newUser.setPhoto(fileName);
+
+        UserProfile savedUser = userStorageRepository.save(newUser);
+
+        String uploadDir = "user-photos/" + savedUser.getUserName();
+
+        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         userStorageService.addUser(newUser);
     }
 
