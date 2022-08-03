@@ -9,7 +9,6 @@ import Inside from "./components/Inside";
 import RegisterForm from "./components/Register";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
-import AllTasks from "./routes/AllTasks";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +19,7 @@ root.render(
                 <Route path="users/new-user" element={<RegisterForm />} />
                 <Route path="about-us" element={<AboutUs />} />
                 <Route path="contact-us" element={<ContactUs />} />
-                <Route path="tasks/:filter" element={<AllTasks />} />
+                <Route path="tasks/:filter" element={<AllUsers />} />
                 <Route path="" element={<Inside />}/>
 
             </Route>
