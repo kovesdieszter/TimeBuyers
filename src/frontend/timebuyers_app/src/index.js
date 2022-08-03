@@ -15,11 +15,11 @@ root.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
+                <Route path="tasks/:filter" element={<AllUsers />} />
                 <Route path="users/:filter" element={<AllUsers />} />
                 <Route path="users/new-user" element={<RegisterForm />} />
                 <Route path="about-us" element={<AboutUs />} />
                 <Route path="contact-us" element={<ContactUs />} />
-                <Route path="tasks/:filter" element={<AllUsers />} />
                 <Route path="" element={<Inside />}/>
 
             </Route>
