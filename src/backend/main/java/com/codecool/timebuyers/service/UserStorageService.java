@@ -78,8 +78,11 @@ public class UserStorageService {
         return userStorageRepository.usersByTask(task);
     }
 
-    public List<UserProfile> getUsersByPaymentMethod(Task task, UserStatus userStatus) {
-        return userStorageRepository.findAllByTaskToTakeAndUserStatus(task, userStatus);
+    public List<UserProfile> getUsersByPaymentMethod(String task, String userStatus) {
+        List<UserProfile> usersByTask = getTaskersByTaskToTake(task);
+        UserStatus status = UserStatus.valueOf(userStatus);
+        return usersByTask.stream().filter(userProfile -> userProfile.getUserStatus() == status)
+                .collect(Collectors.toList());
     }
 
 }
