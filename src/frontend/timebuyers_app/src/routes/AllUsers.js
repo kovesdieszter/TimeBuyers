@@ -56,7 +56,7 @@ const UserCard = (item) => {
                         else return x.replace("_", "-") + ", ";
                     })}</p>
                     <p>
-                        <button>Hire</button>
+                        <button>View profile</button>
                     </p>
                 </div>
     )
