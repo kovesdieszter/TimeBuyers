@@ -72,4 +72,8 @@ public class UserStorageService {
                 .collect(Collectors.toList());
     }
 
+    public List<UserProfile> getUsersByPaymentMethod(Task task, UserStatus userStatus) {
+        return userStorageRepository.findAllByTaskToTakeAndUserStatus(task, userStatus);
+    }
+
 }
