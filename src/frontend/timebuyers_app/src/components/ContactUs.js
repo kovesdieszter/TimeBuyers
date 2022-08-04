@@ -55,21 +55,38 @@ function ContactUs() {
 
 
     return (
-        <div className="container">
-            <form action="api/send-email/{{emailAddress}}">
+        <div className="contact-container">
+
+                <div>
+                    <h1> Contact Us</h1>
+                    <p>Please feel free to contact our Support Team</p>
+                </div>
+                <div className="info-wrap">
+                    <div className="info-row">
+                        <div className="info"><i className="bi bi-geo-alt"></i><h4>Location:</h4><p>44 Nagymező
+                            Street<br/>Budapest, 1065</p></div>
+                        <div className="info"><i className="bi bi-envelope"></i><h4>Email:</h4>
+                            <p>cctimebuyers@gmail.com</p></div>
+                        <div className="info"><i className="bi bi-phone"></i><h4>Call:</h4><p>+1
+                            5589 55488 51</p></div>
+                    </div>
+                </div>
+                <div>
+                    <form action="api/send-email/{{emailAddress}}">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name.." onChange={handleName} value={name} type="text"/>
+                <input type="text" id="name" name="name" placeholder="Your name.." onChange={handleName} value={name}/>
 
                 <label htmlFor="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Your email address.." onChange={handleEmail} value={email} type="text" />
+                <input type="text" id="email" name="email" placeholder="Your email address.." onChange={handleEmail} value={email} />
 
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" placeholder="White a message..." onChange={handleMessage} value={message} type="text">  </textarea>
+                <textarea id="message" name="message" placeholder="White a message..." onChange={handleMessage} value={message}>  </textarea>
 
                 <input type="submit" value="Submit"/>
             </form>
+                </div>
         </div>
-        )
+)
 }
 
 export default ContactUs;
