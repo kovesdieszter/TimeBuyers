@@ -40,6 +40,9 @@ function Navbar(){
                     <li className="nav-item">
                         <Link to={"/users/new-user"} className="nav-link">Registration</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to={"/users/edit-profile/Anita"} className="nav-link">Edit Profile</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
