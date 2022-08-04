@@ -27,8 +27,10 @@ export default function AllUsers() {
     }, [filter, statusFilter])  // ez határozza meg, hogy mikor fusson le a function, jelen esetben a filter változásakor renderel újra
 
     return (<div>
+        <div className="filter-container">
         <h1>{filter}</h1>
         <ButtonDiv taskType={filter}/>
+        </div>
         <div className="cardContainer">
             {showUserCards(users)}
         </div>
@@ -75,7 +77,7 @@ const UserCard = (item) => {
 
 const ButtonDiv = (props) => {
     return <div className="payButtonCont">
-        <Link className="payButton" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
-        <Link className="payButton" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
+        <Link className="payButton blue" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
+        <Link className="payButton green" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
     </div>
 }
