@@ -28,7 +28,9 @@ export default function AllUsers() {
     if (filter !== "all" && filter !== "taskers" && filter !== "buyers") {
     return (<div>
         <div className="filter-container">
-        <h1>{filter.replace("_", " ")}</h1>
+            <div className="filter-text-container">
+        <h1 className="filter">{filter.replace("_", " ")}</h1>
+            </div>
         <ButtonDiv taskType={filter}/>
         </div>
         <div className="cardContainer">
