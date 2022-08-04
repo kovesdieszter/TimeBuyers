@@ -25,14 +25,22 @@ export default function AllUsers() {
             setUsers(users)
         })
     }, [filter, statusFilter])  // ez határozza meg, hogy mikor fusson le a function, jelen esetben a filter változásakor renderel újra
-
+    if (filter !== "all" && filter !== "taskers" && filter !== "buyers") {
     return (<div>
-        <h1>{filter}</h1>
+        <div className="filter-container">
+        <h1>{filter.replace("_", " ")}</h1>
         <ButtonDiv taskType={filter}/>
+        </div>
         <div className="cardContainer">
             {showUserCards(users)}
         </div>
     </div>)
+    } else {
+        return (
+            <div className="cardContainer">
+                {showUserCards(users)}
+            </div>)
+    }
 
 }
 
@@ -76,7 +84,7 @@ const UserCard = (item) => {
 
 const ButtonDiv = (props) => {
     return <div className="payButtonCont">
-        <Link className="payButton" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
-        <Link className="payButton" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
+        <Link className="payButton blue-bg" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
+        <Link className="payButton green-bg" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
     </div>
 }
