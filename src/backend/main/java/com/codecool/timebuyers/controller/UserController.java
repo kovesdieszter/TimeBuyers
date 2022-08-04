@@ -2,9 +2,7 @@ package com.codecool.timebuyers.controller;
 
 
 import com.codecool.timebuyers.dao.UserStorageRepository;
-import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
-import com.codecool.timebuyers.model.UserStatus;
 import com.codecool.timebuyers.service.UserStorageService;
 import com.codecool.timebuyers.utils.FileUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;

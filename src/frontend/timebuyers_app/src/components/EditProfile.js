@@ -2,8 +2,9 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
+
 export default function EditProfile() {
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState([]);
     let {filter} = useParams();
 
 
@@ -14,22 +15,20 @@ export default function EditProfile() {
         })
     }, [filter])
 
-
     const fetchUser = async (filter) => {
-        const response = await (fetch("/api/users/" + filter));
+        const response = await (fetch("/api/users/get/" + filter));
         return await response.json();
     }
 
-    return (<div>
-        <div className=" ">
-            {user.map(item =>
-            <div>
-                username={item.username}
-                email={item.email}
+    return (
+        <div>
+            <div className=" ">
+                <div>
+                    {user.userName}
+                    {user.email}
+                </div>
             </div>
-            )}
-        </div>
-    </div>)
+        </div>)
 };
 
 
