@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/")
@@ -71,10 +72,10 @@ public class UserController {
         userStorageService.deleteUser(username);
     }
 
-    @PutMapping(value = "api/update/{username}")
-    public void updateUser(@PathVariable String username,
+    @PutMapping(value = "api/update/{id}")
+    public void updateUser(@PathVariable UUID id,
                            @RequestBody UserProfile updatedUserProfile){
-        userStorageService.updateUserByUserName(username, updatedUserProfile);
+        userStorageService.updateUserByUserName(id, updatedUserProfile);
     }
 
     @GetMapping(value = "api/users/{task}")

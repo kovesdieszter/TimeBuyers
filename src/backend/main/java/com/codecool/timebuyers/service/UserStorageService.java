@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -38,31 +40,19 @@ public class UserStorageService {
     public void deleteUser(String userName){
         userStorageRepository.delete(userStorageRepository.findByUserName(userName));
     }
-//    public void updateUserByUserName(String selectedUserName,
-//                                 String updatedPassword,
-//                                 String updatedPhoneNumber,
-//                                 String updatedEmail,
-//                                 String updatedTown,
-//                                 UserStatus updatedUserStatus,
-//                                 List<Task> updatedTaskToNeed,
-//                                 List<Task> updatedTaskToTake){
-//        for (UserProfile user : users) {
-//            if (user.getUserName().equals(selectedUserName)){
-//                user.setPassword(updatedPassword);
-//                user.setPhoneNumber(updatedPhoneNumber);
-//                user.setEmail(updatedEmail);
-//                user.setTown(updatedTown);
-//                user.setUserStatus(updatedUserStatus);
-//                user.setTaskToNeed(updatedTaskToNeed);
-//                user.setTaskToTake(updatedTaskToTake);
-//            }
-//        }
-//    }
-    public void updateUserByUserName(String username, UserProfile userProfile){
-        if (userStorageRepository.findByUserName(username) != null){
-            userProfile.setUserName(username);
-            userStorageRepository.save(userProfile);
+    public UserProfile updateUserByUserName(UUID id, UserProfile updatedUserProfile){
+        if (getUserProfileById(id) != null){
+            updatedUserProfile.setId(id);
+            userStorageRepository.save(updatedUserProfile);
         }
+        return updatedUserProfile;
+    }
+    public UserProfile getUserProfileById(UUID id) {
+        Optional<UserProfile> UserProfileById = userStorageRepository.findById(id);
+        if (UserProfileById.isEmpty()){
+            return null;
+        }
+        return UserProfileById.get();
     }
 
     public List<UserProfile> getBuyers() {
