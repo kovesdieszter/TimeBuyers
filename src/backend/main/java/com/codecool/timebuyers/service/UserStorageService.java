@@ -24,6 +24,11 @@ public class UserStorageService {
     public UserProfile getUserByEmail(String email){
         return userStorageRepository.findByEmail(email);
     }
+
+    public UserProfile getUserByUsername(String username){
+        return userStorageRepository.findByUserName(username);
+    }
+
     public List<UserProfile> getAllUser(){
         return userStorageRepository.findAll();
     }

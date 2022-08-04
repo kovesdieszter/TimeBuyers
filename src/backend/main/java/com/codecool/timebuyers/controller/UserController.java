@@ -23,8 +23,13 @@ public class UserController {
     private UserStorageRepository userStorageRepository;
 
     @GetMapping(value = "api/users/get/{email}")
-    public UserProfile getUser(@PathVariable String email) {
+    public UserProfile getUserByEmail(@PathVariable String email) {
         return userStorageService.getUserByEmail(email);
+    }
+
+    @GetMapping(value = "api/users/get/username/{username}")
+    public UserProfile getUserByUsername(@PathVariable String username) {
+        return userStorageService.getUserByUsername(username);
     }
 
     @GetMapping(value = "api/users/all")
@@ -69,15 +74,7 @@ public class UserController {
     @PutMapping(value = "api/update/{username}")
     public void updateUser(@PathVariable String username,
                            @RequestBody UserProfile updatedUserProfile){
-        userStorageService.updateUserByUserName(username,
-                updatedUserProfile.getPassword(),
-                updatedUserProfile.getPhoneNumber(),
-                updatedUserProfile.getEmail(),
-                updatedUserProfile.getTown(),
-                updatedUserProfile.getUserStatus(),
-                updatedUserProfile.getTaskToNeed(),
-                updatedUserProfile.getTaskToTake());
-
+        userStorageService.updateUserByUserName(username, updatedUserProfile);
     }
 
     @GetMapping(value = "api/users/{task}")
