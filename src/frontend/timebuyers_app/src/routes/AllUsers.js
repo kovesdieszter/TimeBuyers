@@ -29,7 +29,7 @@ export default function AllUsers() {
     return (<div>
         <div className="filter-container">
             <div className="filter-text-container">
-        <h1 className="filter">{filter.replace("_", " ")}</h1>
+        <h1 className="filter">{filter.replaceAll("_", " ")}</h1>
             </div>
         <ButtonDiv taskType={filter}/>
         </div>
@@ -85,7 +85,7 @@ const UserCard = (item) => {
 
 const ButtonDiv = (props) => {
     return <div className="payButtonCont">
-        <Link className="payButton blue-bg" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
-        <Link className="payButton green-bg" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
+        <Link className="payButton blue-bg nav-link" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
+        <Link className="payButton green-bg nav-link" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
     </div>
 }

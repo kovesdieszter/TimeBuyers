@@ -15,8 +15,10 @@ export default function App() {
         <body>
         <div className="flex-container-home">
             <div className="navbar"> <Navbar /> </div>
+            <div className="middle-container">
             <div className="searchbar"> <Searchbar/> </div>
             <div className="inside"> <Outlet /></div>
+            </div>
             <div className="footer"> <Footer /></div>
         </div>
         </body>
