@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import '../static/CSS/UpperSection.css';
 
 function UpperSection() {
@@ -19,12 +19,12 @@ function UpperSection() {
             <h2>Hi Buyer! Let our Taskers do your stuff, while you spend some some family-time.</h2></div>
     </section>
 
-    const colors = [first, second, third]
+    const elements = [first, second, third]
 
     const delay = 3000;
 
-    const [index, setIndex] = React.useState(0);
-    const timeoutRef = React.useRef(null);
+    const [index, setIndex] = useState(0);
+    const timeoutRef = useRef(null);
 
     function resetTimeout() {
         if (timeoutRef.current) {
@@ -37,7 +37,7 @@ function UpperSection() {
         timeoutRef.current = setTimeout(
             () =>
                 setIndex((prevIndex) =>
-                    prevIndex === colors.length - 1 ? 0 : prevIndex + 1
+                    prevIndex === elements.length - 1 ? 0 : prevIndex + 1
                 ),
             delay
         );
@@ -54,16 +54,16 @@ function UpperSection() {
                 className="slideshowSlider"
                 style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
             >
-                {colors.map((backgroundColor, index) => (
+                {elements.map((element, index) => (
                     <section
                         className="slide"
                         key={index}
-                    >{backgroundColor}</section>
+                    >{element}</section>
                 ))}
             </div>
 
             <div className="slideshowDots">
-                {colors.map((_, idx) => (
+                {elements.map((_, idx) => (
                     <div
                         key={idx}
                         className={`slideshowDot${index === idx ? " active" : ""}`}
