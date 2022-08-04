@@ -7,6 +7,8 @@ import com.codecool.timebuyers.model.UserProfile;
 import com.codecool.timebuyers.model.UserStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,6 @@ import java.util.stream.Stream;
 public class UserStorageService {
     @Autowired
     UserStorageRepository userStorageRepository;
-    private final List<UserProfile> users = new ArrayList<>();
 
     public UserProfile getUserByEmail(String email){
         return userStorageRepository.findByEmail(email);
@@ -32,30 +33,31 @@ public class UserStorageService {
     public void deleteUser(String userName){
         userStorageRepository.delete(userStorageRepository.findByUserName(userName));
     }
-    public void updateUserByUserName(String selectedUserName,
-                                 String updatedPassword,
-                                 String updatedPhoneNumber,
-                                 String updatedEmail,
-                                 String updatedTown,
-                                 UserStatus updatedUserStatus,
-                                 List<Task> updatedTaskToNeed,
-                                 List<Task> updatedTaskToTake){
-        for (UserProfile user : users) {
-            if (user.getUserName().equals(selectedUserName)){
-                user.setPassword(updatedPassword);
-                user.setPhoneNumber(updatedPhoneNumber);
-                user.setEmail(updatedEmail);
-                user.setTown(updatedTown);
-                user.setUserStatus(updatedUserStatus);
-                user.setTaskToNeed(updatedTaskToNeed);
-                user.setTaskToTake(updatedTaskToTake);
-            }
+//    public void updateUserByUserName(String selectedUserName,
+//                                 String updatedPassword,
+//                                 String updatedPhoneNumber,
+//                                 String updatedEmail,
+//                                 String updatedTown,
+//                                 UserStatus updatedUserStatus,
+//                                 List<Task> updatedTaskToNeed,
+//                                 List<Task> updatedTaskToTake){
+//        for (UserProfile user : users) {
+//            if (user.getUserName().equals(selectedUserName)){
+//                user.setPassword(updatedPassword);
+//                user.setPhoneNumber(updatedPhoneNumber);
+//                user.setEmail(updatedEmail);
+//                user.setTown(updatedTown);
+//                user.setUserStatus(updatedUserStatus);
+//                user.setTaskToNeed(updatedTaskToNeed);
+//                user.setTaskToTake(updatedTaskToTake);
+//            }
+//        }
+//    }
+    public void updateUserByUserName(String username, UserProfile userProfile){
+        if (userStorageRepository.findByUserName(username) != null){
+            userProfile.setUserName(username);
+            userStorageRepository.save(userProfile);
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Registered users: " + users;
     }
 
     public List<UserProfile> getBuyers() {
