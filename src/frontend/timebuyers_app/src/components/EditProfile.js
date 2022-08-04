@@ -24,8 +24,22 @@ export default function EditProfile() {
         <div>
             <div className=" ">
                 <div>
-                    {user.userName}
+                    {user.password}
+                    <br/>
                     {user.email}
+                    <br/>
+                    {user.userName}
+                    <br/>
+                    {user.phoneNumber}
+                    <br/>
+                    {user.rating}
+                    <br/>
+                    {user.town}
+                    <br/>
+                    {user.userStatus}
+                    <br/>
+                    {user.photo}
+
                 </div>
             </div>
         </div>)
