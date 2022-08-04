@@ -83,7 +83,7 @@ const UserCard = (item) => {
 
 const ButtonDiv = (props) => {
     return <div className="payButtonCont">
-        <Link className="payButton blue" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
-        <Link className="payButton green" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
+        <Link className="payButton blue-bg" to={"/tasks/" + props.taskType + "/BOTH"}>Pay with task </Link>
+        <Link className="payButton green-bg" to={"/tasks/" + props.taskType  + "/TASKER"}>Pay with cash</Link>
     </div>
 }
