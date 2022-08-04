@@ -25,14 +25,20 @@ export default function AllUsers() {
             setUsers(users)
         })
     }, [filter, statusFilter])  // ez határozza meg, hogy mikor fusson le a function, jelen esetben a filter változásakor renderel újra
-
-    return (<div>
-        <h1>{filter}</h1>
-        <ButtonDiv taskType={filter}/>
-        <div className="cardContainer">
-            {showUserCards(users)}
-        </div>
-    </div>)
+    if (filter !== "all" && filter !== "taskers" && filter !== "buyers") {
+        return (<div>
+            <h1>{filter}</h1>
+            <ButtonDiv taskType={filter}/>
+            <div className="cardContainer">
+                {showUserCards(users)}
+            </div>
+        </div>)
+    } else {
+        return (
+            <div className="cardContainer">
+                {showUserCards(users)}
+            </div>)
+    }
 
 }
 
