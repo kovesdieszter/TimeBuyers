@@ -2,9 +2,7 @@ package com.codecool.timebuyers.controller;
 
 
 import com.codecool.timebuyers.dao.UserStorageRepository;
-import com.codecool.timebuyers.model.Task;
 import com.codecool.timebuyers.model.UserProfile;
-import com.codecool.timebuyers.model.UserStatus;
 import com.codecool.timebuyers.service.UserStorageService;
 import com.codecool.timebuyers.utils.FileUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/")
@@ -24,8 +24,13 @@ public class UserController {
     private UserStorageRepository userStorageRepository;
 
     @GetMapping(value = "api/users/get/{email}")
-    public UserProfile getUser(@PathVariable String email) {
+    public UserProfile getUserByEmail(@PathVariable String email) {
         return userStorageService.getUserByEmail(email);
+    }
+
+    @GetMapping(value = "api/users/get/username/{username}")
+    public UserProfile getUserByUsername(@PathVariable String username) {
+        return userStorageService.getUserByUsername(username);
     }
 
     @GetMapping(value = "api/users/all")
@@ -51,7 +56,7 @@ public class UserController {
     @PostMapping(value = "api/new-user")
     public void addUser(@RequestBody UserProfile newUser, @RequestParam("image") MultipartFile multipartFile) throws IOException {
 
-        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
         newUser.setPhoto(fileName);
 
         UserProfile savedUser = userStorageRepository.save(newUser);
@@ -67,18 +72,10 @@ public class UserController {
         userStorageService.deleteUser(username);
     }
 
-    @PutMapping(value = "api/update/{username}")
-    public void updateUser(@PathVariable String username,
+    @PutMapping(value = "api/update/{id}")
+    public void updateUser(@PathVariable UUID id,
                            @RequestBody UserProfile updatedUserProfile){
-        userStorageService.updateUserByUserName(username,
-                updatedUserProfile.getPassword(),
-                updatedUserProfile.getPhoneNumber(),
-                updatedUserProfile.getEmail(),
-                updatedUserProfile.getTown(),
-                updatedUserProfile.getUserStatus(),
-                updatedUserProfile.getTaskToNeed(),
-                updatedUserProfile.getTaskToTake());
-
+        userStorageService.updateUserByUserName(id, updatedUserProfile);
     }
 
     @GetMapping(value = "api/users/{task}")

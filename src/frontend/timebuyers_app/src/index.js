@@ -9,6 +9,7 @@ import Inside from "./components/Inside";
 import RegisterForm from "./components/Register";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
+import EditProfile from "./components/EditProfile";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
                 <Route path="about-us" element={<AboutUs />} />
                 <Route path="contact-us" element={<ContactUs />} />
                 <Route path="" element={<Inside />}/>
+                <Route path="users/edit-profile/:filter" element={<EditProfile />}/>
 
             </Route>
 

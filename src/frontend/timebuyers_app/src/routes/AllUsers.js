@@ -54,6 +54,7 @@ const showUserCards = function (data) {
             email={item.email}
             taskNeed={item.taskToNeed}
             taskTake={item.taskToTake}
+            photo={item.photo}
         />));
 
 }
@@ -61,7 +62,7 @@ const showUserCards = function (data) {
 const UserCard = (item) => {
     return (
         <div className="card">
-            <img src={test_pic} alt="Test" style={{width: "100%"}}/>
+            <img src={item.photo} alt="photo" style={{width: "100%"}}></img>
             <h1>{item.name}</h1>
             <p className="title">{item.email}</p>
             <p>{item.town}</p>
