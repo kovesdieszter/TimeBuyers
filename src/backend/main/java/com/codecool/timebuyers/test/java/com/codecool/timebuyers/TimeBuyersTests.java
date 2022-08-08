@@ -1,4 +1,4 @@
-package com.codecool.timebuyers;
+package com.codecool.timebuyers.test.java.com.codecool.timebuyers;
 
 import com.codecool.timebuyers.dao.UserStorageRepository;
 import com.codecool.timebuyers.model.Task;
@@ -64,7 +64,7 @@ class TimeBuyersTests {
         Assertions.assertFalse(userStorageRepository.findAll().isEmpty());
     }
 
-    // not working --> itthagyom érdekességként
+    // not working --> next week task
     @Test
     void deleteUserByNameTest() {
         userStorageService.deleteUser(testUserProfile.getUserName());
