@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import '../static/CSS/Usercard.css';
 import '../static/CSS/Inside.css';
-import test_pic from '../static/images/testphoto.jpg'
-import {BrowserRouter, Link, useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 
 const fetchUsers = async (filter, statusFilter) => {
@@ -24,7 +23,7 @@ export default function AllUsers() {
         fetchUsers(filter, statusFilter).then((users) => {
             setUsers(users)
         })
-    }, [filter, statusFilter])  // ez határozza meg, hogy mikor fusson le a function, jelen esetben a filter változásakor renderel újra
+    }, [filter, statusFilter])
     if (filter !== "all" && filter !== "taskers" && filter !== "buyers") {
     return (<div>
         <div className="filter-container">
@@ -47,8 +46,9 @@ export default function AllUsers() {
 }
 
 const showUserCards = function (data) {
-    return data.map(item => (
+    return data.map((item, key) => (
         <UserCard
+            key={item.id}
             name={item.userName}
             town={item.town}
             email={item.email}
@@ -62,7 +62,7 @@ const showUserCards = function (data) {
 const UserCard = (item) => {
     return (
         <div className="card">
-            <img src={item.photo} alt="photo" style={{width: "100%"}}></img>
+            <img src={item.photo} style={{width: "100%", height: "200px"}} alt="profile"></img>
             <h1>{item.name}</h1>
             <p className="title">{item.email}</p>
             <p>{item.town}</p>
